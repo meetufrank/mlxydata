@@ -3894,6 +3894,7 @@
 .center-text1{
 	color: #017f4f;
 	text-align: left;
+	font-family: sans-serif;
 }
 .center-text{
 	color: #014B96;
@@ -3970,7 +3971,7 @@
 	border: 2px solid #017f4f;
     padding:16px 8px;
     border-radius:4px;
-
+    font-family: sans-serif;
 }
 .topbar-new{
 	border-radius:2px;
@@ -3990,4 +3991,7 @@
 .expert-titles2{
 	color:#014B96;
 	font-weight: bold;
+}
+.expert-example-wrapper .expert-info, .expert-example-wrapper .expert-info>span{
+	font-family: sans-serif;
 }
