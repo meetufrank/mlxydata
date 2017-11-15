@@ -1443,3 +1443,6 @@ body {
 .mt--l {
 	margin-top: 60px
 }
+.feature-container .feature-desc h3 span,.feature-container .feature-desc .feature-text{
+	font-family: sans-serif;
+}
