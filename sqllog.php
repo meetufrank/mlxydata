@@ -105,3 +105,5 @@ ADD COLUMN `abbreviation`  char(4) NOT NULL COMMENT '//简称' AFTER `sort`;
 ALTER TABLE `nd_cases_country`
 ADD COLUMN `ename`  varchar(255) NOT NULL DEFAULT '' COMMENT '//英文名称' AFTER `abbreviation`;
 
+ALTER TABLE `nd_cases_case`
+ADD COLUMN `e_province`  varchar(255) NULL COMMENT '//国外州/省' AFTER `ks_type`;
