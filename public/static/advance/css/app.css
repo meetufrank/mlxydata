@@ -1037,7 +1037,8 @@ body {
 	}
 
 	.feature-container .feature-desc a {
-		font-size: 1.2em
+		//font-size: 1.2em;
+		font-size:0.8em
 	}
 
 	.feature-container .feature-desc .feature-text {

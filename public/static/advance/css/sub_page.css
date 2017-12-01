@@ -54,6 +54,9 @@
 		margin-left: 60px;
 		margin-right: 60px
 	}
+	.diagnose-process-wrapper2 .diagnose-step-context{
+		top:55%;
+	}
 }
 
 @media (min-width:1200px) {
@@ -2366,14 +2369,14 @@
 
 	.diagnose-process-wrapper2 .diagnose-step-context {
 		position: absolute;
-		top: 50%;
+		top:55%;
 		left: 45px;
 		right: 45px;
 		padding-left:20px;
 		padding-right: 15px;
 		color: #fff;
 		font-size: 1.48em;
-    	line-height: 1.8;
+    	line-height:1.6;
 		-webkit-transform: translate(0,-50%);
 		transform: translate(0,-50%)
 	}
