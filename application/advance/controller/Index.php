@@ -165,9 +165,9 @@ class Index extends Controller
                  'specialty' => $request->param('specialty'),
                  'case_type' => $request->param('case_type'),
                 'sort' => $request->param('sort',0), 
-                'country'=>$request->param('country',1),
+                'country'=>$request->param('country',3),
                 'email'=>str_replace(' ', '',$request->param('email')),
-               
+                'e_province'=>$request->param('e_province'),
             ];
            if(empty($data['province'])){
                $data['province']=110000;

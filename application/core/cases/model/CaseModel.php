@@ -218,7 +218,7 @@ class CaseModel extends Model
            
             //前端页面提交
            $countryid=$field['country'];
-           $userid=$userid; 
+           $userid=$request->userid; 
            return $this->getNewCaseKey($countryid,$userid);
         }
       

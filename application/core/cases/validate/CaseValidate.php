@@ -26,7 +26,8 @@ class CaseValidate extends Validate
         'email'=>['require','regex'=>'^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$'],
         'illness'=>'require',
         'userid'=>'require',
-        'sort'=>'number'
+        'sort'=>'number',
+        'e_province'=>'max:50'
 
         
     ];
@@ -52,6 +53,7 @@ class CaseValidate extends Validate
         'address.max' => 'Address length exceeds 200',
         'userid.require' => 'The user who submitted the case must choose',
         'country.require'=>'The state must choose',
+        'e_province.max'=>'The name of the province exceeds the maximum length',
         'province.requireIf' => 'Provincial and municipal areas must choose',
         'city.requireIf' => 'Provincial and municipal areas must choose',
         'district.requireIf' => 'Provincial and municipal areas must choose',
@@ -76,6 +78,7 @@ class CaseValidate extends Validate
             'address',
             'userid',
             'country',
+            'e_province',
             'city',
             'province',
             'district',
@@ -84,6 +87,7 @@ class CaseValidate extends Validate
             'isme',
             'relationship',
             'sort'
+            
         ],
         'edit' => [
             'username',
