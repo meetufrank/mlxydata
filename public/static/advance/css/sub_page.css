@@ -25,6 +25,9 @@
 	.expert-text3{
 		font-size:3.5em;
 	}
+	.expert-text4{
+		font-size:2.5em;
+	}
 	.feature-caption-new{
 		margin-top: 15px;
 	}
@@ -150,6 +153,10 @@
 	}
 	.expert-text3{
 		font-size: 1.5em;
+    	font-weight: bold;
+	}
+	.expert-text4{
+		font-size:1em;
     	font-weight: bold;
 	}
 	.feature-caption-new{
@@ -396,6 +403,11 @@
 		font-weight: bold;
 		color: #014B96;
 	}
+	.feature-title-bottom{
+		text-align: right;
+		color:#6B9BC3;
+		font-size:0.5rem;
+	}
 	.expert-feature-wrapper span {
 		display: block;
 		text-align: left;
@@ -516,6 +528,11 @@
 		color:#014B96;
 		white-space: nowrap;
 	}
+	.feature-title-bottom{
+		text-align: right;
+		color:#6B9BC3;
+		font-size: 1rem;
+	}
 }
 
 @media (min-width:1200px) {
@@ -579,6 +596,12 @@
 		color:#014B96;
 		white-space: nowrap;
 	}
+
+	.feature-title-bottom{
+		text-align: right;
+		color:#6B9BC3;
+		font-size:1.5rem;
+	}
 }
 
 @media (min-width:1439px) {
@@ -641,6 +664,11 @@
 		font-weight: 700;
 		color: #014B96;
 		white-space: nowrap;
+	}
+	.feature-title-bottom{
+		text-align: right;
+		color:#6B9BC3;
+		font-size: 1.8rem;
 	}
 }
 
@@ -3957,7 +3985,10 @@
     color: #014B96;
     text-align: left;
 }
-
+.expert-text4{
+    color: #014B96;
+    text-align: left;
+}
 .expert-feature-wrapper-new-bgcolor{
 	background: -webkit-linear-gradient(left, #6B9BC3 , #8DE0E6); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(left, #6B9BC3, #8DE0E6); /* Opera 11.1 - 12.0 */

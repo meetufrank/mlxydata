@@ -973,7 +973,8 @@ body {
 		transform: translate(0,-50%);
 		padding-left: 12px;
 		padding-right: 8px;
-		letter-spacing: 2px;
+		letter-spacing:1px;
+		max-width: 90%;
 	}
 
 	.feature-container .feature-desc .feature-icon {
@@ -1044,7 +1045,8 @@ body {
 	.feature-container .feature-desc .feature-text {
 		padding-left: 10px;
 		padding-right: 5px;
-		letter-spacing:2px;
+		letter-spacing:1px;
+		max-width: 90%;
 	}
 
 	.feature-container .feature-desc .feature-icon {
@@ -1118,6 +1120,7 @@ body {
 		padding-left: 15px;
 		padding-right: 10px;
 		letter-spacing: 2px;
+		max-width: 90%;
 	}
 
 	.feature-container .feature-desc .feature-icon {
@@ -1126,7 +1129,7 @@ body {
 		height: 24px;
 		right: 5px;
 		border-radius: 50%;
-		    margin-right: 5px;
+		margin-right: 5px;
 	}
 
 	.feature-container .feature-desc .feature-icon i {
