@@ -5,15 +5,16 @@
 		margin-right: 30px
 	}
 	.diagnose-step-text-new ul li{
-		font-size: 1.8em;
-		line-height: 1.5;
+		// font-size: 1.8em;
+		font-size: 2.1em;
+		line-height: 1.7;
 	}
 	.expert-example-caption .text1,.expert-example-caption .text2{
     	color: #014B96;
     	text-align: left;
     	font-size: 2em;
     	letter-spacing: 2px;
-    	font-style: oblique;
+    	// font-style: oblique;
     	line-height: 1.5;
 	}
 	.expert-example-caption .text1{
