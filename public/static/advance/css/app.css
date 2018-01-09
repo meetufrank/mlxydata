@@ -325,7 +325,8 @@ body {
 	}
 
 	.menu-wrapper .menubar-2 a {
-		width: 225px;
+		/*width: 225px;*/
+		width: 280px;		
 		border-left: 10px solid #1ba9f5;
 		border-bottom: 1px solid #1ba9f5
 	}
@@ -406,7 +407,8 @@ body {
 	}
 
 	.menu-wrapper .menubar-2 a {
-		width: 330px
+		/*width: 330px*/
+		width: 430px
 	}
 
 	.menu-wrapper .menubar-3 a {
@@ -450,7 +452,8 @@ body {
 	}
 
 	.menu-wrapper .menubar-2 a {
-		width: 415px
+		/*width: 415px*/
+		width: 550px
 	}
 
 	.menu-wrapper .menubar-3 a {
