@@ -6,6 +6,8 @@ use think\Request;
 use core\cases\logic\CountryLogic;
 use core\cases\logic\CaseLogic;
 use core\cases\logic\CompanyLogic;
+use core\cases\logic\ChatUserLogic;
+use app\common\sendemail\SendUser;
 class CaseModel extends Model
 {
 
@@ -224,7 +226,7 @@ class CaseModel extends Model
       
     }
 
-    /**
+     /**
      * 获取一个新的CaseID
      *
      * @return string
@@ -250,7 +252,7 @@ class CaseModel extends Model
         $usermap=[
             'id'=>$userid
         ];
-        
+         
         $companyid=ChatUserModel::getInstance()->where($usermap)->value('company');
         
         if($companyid){
@@ -266,13 +268,38 @@ class CaseModel extends Model
             $casemap=[];
             
             $caseid=$country_abbreviation.sprintf("%'X6s", $count+$index).$company_abbreviation;
-           
+            
             $casemap=[
                 'case_code'=>$caseid
             ];
             $casecount=CaseLogic::getInstance()->getCaseCount($casemap,1);
             if(!$casecount){
-                
+                //如果成功获取case编号，先给用户发送邮件
+                $user= ChatUserLogic::getInstance()->getUserlist($usermap,1);
+                if(isset($user['email'])||!empty($user['email'])){
+                        //发送邮件  
+                        $email=new SendUser();
+                        $email->addCaseSend($user);
+                  }
+                  
+                 //给公司绑定的每个邮箱发送邮件
+                 //查询公司绑定的邮箱列表
+                 $companylist=db('cases_company_email')->where(['c_id'=>$companyid])->select();
+                 
+                 if(!empty($companylist)){
+                     
+                     foreach ($companylist as $key => $value) {
+                        $user=[];
+                        $user['email']=$value['email'];
+                        $user['language']=$value['language'];
+                        $user['case_code']=$casecount;
+                        if(isset($user['email'])||!empty($user['email'])){
+                        //发送邮件  
+                        $email=new SendUser();
+                        $email->addCaseSend($user);
+                         }
+                     }
+                 }
                 return $caseid;
                 break;
             }
@@ -283,7 +310,6 @@ class CaseModel extends Model
        } 
        
     }
-    
 
 //    
 //        /**

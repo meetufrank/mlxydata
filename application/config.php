@@ -12,7 +12,8 @@ return [
         'core',
         'module',
         'extra',
-        'install'
+        'install',
+        'laychatphone'
     ],
     
     'default_module' => 'advance',//默认模块	

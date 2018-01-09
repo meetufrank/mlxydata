@@ -97,7 +97,7 @@ class ChatUserLogic extends Logic
         ];
     }
      /*
-  * 获取用户下拉列表
+  * 获取用户公司下拉列表
   */
     
         public function getSelectCompany($where=[],$sort_name='sort',$sort='desc')
@@ -138,13 +138,17 @@ class ChatUserLogic extends Logic
      */
     public function getLanguage($data,$k) {
         isset($data['case_code']) ||  $data['case_code']='';
+        isset($data['nickname']) ||  $data['nickname']='';
+        isset($data['url']) ||  $data['url']='';
+        isset($data['user_name']) ||  $data['user_name']='';
+        isset($data['pwd']) ||  $data['pwd']='';
         $arr= [
            1=>[
               'name'=>'中文简体',
               'value'=>1, 
               'data'=>[
                 1=>[
-                  'content'=>'【蜜柚网】'.$data['nickname'].'(先生/女士),您好,您被指定负责新的case，请及时登录 '.$data['url'].' 选择接收或者拒绝',
+                  'content'=>'【汇医服务】'.$data['nickname'].'(先生/女士),您好,您被指定负责新的case，请及时登录 '.$data['url'].' 选择接收或者拒绝',
                   'description'=>'被指定case发给casemanager的短信内容'  
                  ],
                 2=>[
@@ -203,7 +207,7 @@ class ChatUserLogic extends Logic
                   'description'=>'用户寻求帮助，casemanager不在线casemanager收到的短信'  
                  ],
                 5=>[
-                  'content'=>'',
+                  'content'=>'测试自动回复（中文）',
                   'description'=>'layim用户咨询，casemanger超过十分钟未回复的时候对用户的自动回复'  
                  ],
                 6=>[
@@ -218,7 +222,12 @@ class ChatUserLogic extends Logic
                              
                   'description'=>'casemanager接受新的case发送的短信',
                   'title'=>'汇医服务提醒'
-                 ]
+                 ],
+                7=>[
+                   'content'=>'添加case成功', 
+                   'description'=>'为用户添加成功case发送的邮件内容',
+                    'title'=>'汇医服务提醒'
+                ]
               
               ]    
            ],
@@ -227,7 +236,7 @@ class ChatUserLogic extends Logic
               'value'=>2, 
               'data'=>[
                 1=>[
-                  'content'=>'【蜜柚网】'.$data['nickname'].'(先生/女士),您好,您被指定负责新的case，请及时登录 '.$data['url'].' 选择接收或者拒绝',
+                  'content'=>'【汇医服务】'.$data['nickname'].'(先生/女士),您好,您被指定负责新的case，请及时登录 '.$data['url'].' 选择接收或者拒绝',
                   'description'=>'被指定case发给casemanager的短信内容'  
                  ],
                 2=>[
@@ -251,7 +260,12 @@ class ChatUserLogic extends Logic
                 6=>[
                   'content'=>'',
                   'description'=>'casemanager接受新的case发送的短信'  
-                 ]
+                 ],
+                7=>[
+                   'content'=>'添加case成功(繁体)', 
+                   'description'=>'为用户添加成功case发送的邮件内容',
+                    'title'=>'汇医服务提醒'
+                ]
               ]    
            ],
             3=>[
@@ -319,12 +333,17 @@ class ChatUserLogic extends Logic
                              
                   'description'=>'casemanager接受新的case发送的短信',
                   'title'=>'Reminder of medical service'
-                 ]
+                 ],
+                7=>[
+                   'content'=>'添加case成功(测试英文)', 
+                   'description'=>'为用户添加成功case发送的邮件内容',
+                    'title'=>'汇医服务提醒(测试英文)'
+                ]
               ]    
            ]
            
         ];
-        $data['language'] || $data['language']=1;
+        isset($data['language']) || $data['language']=1;
         $key=$data['language'];
        
              $return_arr=$arr[$key]['data'][$k];
@@ -988,6 +1007,7 @@ class ChatUserLogic extends Logic
        $list=ChatUserModel::getInstance()->getCmlist($where,$order);
        return $list;
     }
+    
     
   
     

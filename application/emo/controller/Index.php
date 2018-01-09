@@ -1,5 +1,5 @@
 <?php
-namespace app\advance\controller;
+namespace app\emo\controller;
 
 use think\Config;
 use cms\Controller;
