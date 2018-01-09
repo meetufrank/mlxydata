@@ -170,6 +170,12 @@ class Index extends Controller
                 'email'=>str_replace(' ', '',$request->param('email')),
                 'e_province'=>$request->param('e_province'),
             ];
+             if(!in_array($data['case_type'], [1,2])){
+                $msg['error']=1;
+                $msg['msg']='提交case类型非法'; 
+                  echo $this->error($msg);                 
+                  exit;
+            }
            if(empty($data['province'])){
                $data['province']=110000;
            }
