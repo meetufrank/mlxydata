@@ -170,8 +170,10 @@ body {
 	}
 
 	.menu-wrapper .menubar{
-		float: left;
-		width: 50%
+		/*float: left;
+		width: 50%*/
+		width: 100%;
+
 	}
 
 	.menu-wrapper .menubar a{
@@ -181,8 +183,8 @@ body {
 		line-height: 40px;
 		color: #fff;
 		font-size: 18px;
-		margin-bottom: 50px;
-		// font-size: 1.3em;
+		/*margin-bottom: 50px;
+		font-size: 1.3em;*/
 		text-align: center;
 	}
 
@@ -1184,7 +1186,8 @@ body {
 
 	.bottom-nav li {
 		float: left;
-		width: 33.33%
+		/*width: 33.33%*/
+		width: 50%;
 	}
 
 	.bottom-nav a {
