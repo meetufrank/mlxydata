@@ -114,6 +114,7 @@ class Response
             
             // 发送头部信息
             foreach ($this->header as $name => $val) {
+                
                 if (is_null($val)) {
                     header($name);
                 } else {
