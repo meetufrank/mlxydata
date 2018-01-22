@@ -2406,7 +2406,8 @@
 		padding-right: 15px;
 		color: #fff;
 		font-size: 1.48em;
-    	line-height:1.6;
+		line-height:1.4em;
+    	/*line-height:1.6;*/
 		-webkit-transform: translate(0,-50%);
 		transform: translate(0,-50%)
 	}
