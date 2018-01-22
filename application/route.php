@@ -26,13 +26,13 @@ return [
     //advance
    'Allianz/DCP/services/:id'=>'dcp/Index/service_details',
     'Allianz/DCP/mobile_form/:id'=>'dcp/Index/mobile_form',
-    'Allianz/DCP'=>'dcp/Index/index',
+    'Allianz/DCP'=>'dcp/Index/service_details',
     
     'Allianz/EMO/services/:id'=>'emo/Index/service_details',
     'Allianz/EMO/mobile_form/:id'=>'emo/Index/mobile_form',
-     'Allianz/EMO'=>'emo/Index/index',
+     'Allianz/EMO'=>'emo/Index/service_details',
 
-//        'Allianz'=>'advance/Index/index',
+        'Allianz'=>'advance/Index/index',
 //    'services/:id'=>'advance/Index/service_details',
 //    'mobile_form/:id'=>'advance/Index/mobile_form',
 

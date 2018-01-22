@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/www/mlxyadmin/application/core/cases/logic/CaseLogic.php</file>
+            <file>file:/D:/www/mlxyadmin/application/emo/view/index/service_details.html</file>
+            <file>file:/D:/www/mlxyadmin/application/core/cases/model/CaseModel.php</file>
+            <file>file:/D:/www/mlxyadmin/application/emo/controller/Login.php</file>
+            <file>file:/D:/www/mlxyadmin/application/emo/view/common/header.html</file>
+            <file>file:/D:/www/mlxyadmin/application/emo/view/index/index.html</file>
+            <file>file:/D:/www/mlxyadmin/application/core/cases/validate/CaseValidate.php</file>
+            <file>file:/D:/www/mlxyadmin/application/emo/view/common/base.html</file>
+            <file>file:/D:/www/mlxyadmin/application/emo/controller/Index.php</file>
+            <file>file:/D:/www/mlxyadmin/application/core/cases/logic/ChatUserLogic.php</file>
+            <file>file:/D:/www/mlxyadmin/application/emo/view/common/footer.html</file>
+        </group>
     </open-files>
 </project-private>
