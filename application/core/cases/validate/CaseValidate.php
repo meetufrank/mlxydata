@@ -13,11 +13,11 @@ class CaseValidate extends Validate
      */
     protected $rule = [
 
-        'username' =>['require','regex'=>'^[\x80-\xffa-zA-Z]+$','max'=>20],
+        'username' =>['require','max'=>20],
         'birthday' => 'require|date',
         'sex' => 'require',
         'relationship'=>'requireIf:isme,0',
-        'applicant_name' => ['require','regex'=>'^[\x80-\xffa-zA-Z]+$','max'=>20],
+        'applicant_name' => ['require','max'=>20],
         'country'=>'require',
         'province'=>'requireIf:country,1',
         'city'=>'requireIf:country,1',

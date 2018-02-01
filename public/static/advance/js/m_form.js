@@ -34,7 +34,7 @@ $(function() {
         }
     }),
     $(".relation-between").click(function() {
-        $("#is-patient-self1").is(":checked") ? ($("#other-relation").prop("disabled", !0), $("#other-relation").val("0"), $("#other-relation").addClass("not-mandatory"), $("#applicant-name").val($("#patient-name").val())) : $("#is-patient-self2").is(":checked") && ($("#other-relation").prop("disabled", !1), $("#other-relation").removeClass("not-mandatory"))
+        $("#is-patient-self1").is(":checked") ? ($("#other-relation").prop("disabled", !0), $("#other-relation").val("0"), $("#other-relation").addClass("not-mandatory"), $("#applicant-name").val($("#firstname").val()+' '+$("#lastname").val())) : $("#is-patient-self2").is(":checked") && ($("#other-relation").prop("disabled", !1), $("#other-relation").removeClass("not-mandatory"))
     });
  
     $(".contract-click").on("click",

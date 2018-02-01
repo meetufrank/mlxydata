@@ -224,9 +224,9 @@ class ChatUserLogic extends Logic
                   'title'=>'汇医服务提醒'
                  ],
                 7=>[
-                   'content'=>'添加case成功', 
+                   'content'=>'A new patient has enrolled into ALLIANZ AYUDHYA/ ADVANCE MEDICAL Expert Second Medical Opinion (ESMO) service portal.', 
                    'description'=>'为用户添加成功case发送的邮件内容',
-                    'title'=>'汇医服务提醒'
+                    'title'=>'Reminder of medical service'
                 ]
               
               ]    
@@ -335,9 +335,9 @@ class ChatUserLogic extends Logic
                   'title'=>'Reminder of medical service'
                  ],
                 7=>[
-                   'content'=>'添加case成功(测试英文)', 
+                   'content'=>'A new patient has enrolled into ALLIANZ AYUDHYA/ ADVANCE MEDICAL Expert Second Medical Opinion (ESMO) service portal.', 
                    'description'=>'为用户添加成功case发送的邮件内容',
-                    'title'=>'汇医服务提醒(测试英文)'
+                    'title'=>'Reminder of medical service'
                 ]
               ]    
            ]

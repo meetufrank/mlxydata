@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:64:"D:\www\mlxyadmin\application\dcp\view\index\service_details.html";i:1515469983;s:54:"D:\www\mlxyadmin\application\dcp\view\common\base.html";i:1515467749;s:56:"D:\www\mlxyadmin\application\dcp\view\common\header.html";i:1515469347;s:56:"D:\www\mlxyadmin\application\dcp\view\common\footer.html";i:1515469864;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:64:"D:\www\mlxyadmin\application\dcp\view\index\service_details.html";i:1515469983;s:54:"D:\www\mlxyadmin\application\dcp\view\common\base.html";i:1515467749;s:56:"D:\www\mlxyadmin\application\dcp\view\common\header.html";i:1515469347;s:56:"D:\www\mlxyadmin\application\dcp\view\common\footer.html";i:1517386932;}*/ ?>
 <!doctype html>
 <html lang="">
 <head>
@@ -303,9 +303,15 @@
           <input type="hidden" id="form-type" name="case_type" value="">
           <div class="form-section">
             <div class="form-group">
-              <label for="patient-name" class="col-xs-4 col-sm-3 control-label medical-label">Patient Name</label>
+              <label for="patient-name" class="col-xs-4 col-sm-3 control-label medical-label">First Name</label>
               <div class="col-xs-8 col-sm-9">
-                <input type="text" class="form-control" id="patient-name" name="username">
+                <input type="text" class="form-control" id="firstname" name="firstname" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="patient-name" class="col-xs-4 col-sm-3 control-label medical-label">Last Name</label>
+              <div class="col-xs-8 col-sm-9">
+                <input type="text" class="form-control" id="lastname" name="lastname" >
               </div>
             </div>
             <div class="form-group date-select">

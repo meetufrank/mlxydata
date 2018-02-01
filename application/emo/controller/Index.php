@@ -146,7 +146,7 @@ class Index extends Controller
     public function addCase(Request $request) {
          if ($request->isPost()) {
             $data = [
-                'username' => str_replace(' ', '',$request->param('username')),
+                'username' => str_replace(' ', '',$request->param('firstname')).' '.str_replace(' ', '',$request->param('lastname')),
                 'birthday' => $request->param('birthday'),
                 'sex' => $request->param('sex'),
                 'isme' => $request->param('isme'),

@@ -234,7 +234,7 @@ class CaseModel extends Model
     public function getNewCaseKey($countryid,$userid)
     {
        $request = Request::instance();
-       
+       $field=$request->param();
       //查询国家信息
         $countrymap=[
             'id'=>$countryid
@@ -275,12 +275,12 @@ class CaseModel extends Model
             $casecount=CaseLogic::getInstance()->getCaseCount($casemap,1);
             if(!$casecount){
                 //如果成功获取case编号，先给用户发送邮件
-                $user= ChatUserLogic::getInstance()->getUserlist($usermap,1);
-                if(isset($user['email'])||!empty($user['email'])){
-                        //发送邮件  
-                        $email=new SendUser();
-                        $email->addCaseSend($user);
-                  }
+//                $user= ChatUserLogic::getInstance()->getUserlist($usermap,1);
+//                if(isset($user['email'])||!empty($user['email'])){
+//                        //发送邮件  
+//                        $email=new SendUser();
+//                        $email->addCaseSend($user);
+//                  }
                   
                  //给公司绑定的每个邮箱发送邮件
                  //查询公司绑定的邮箱列表
@@ -293,6 +293,7 @@ class CaseModel extends Model
                         $user['email']=$value['email'];
                         $user['language']=$value['language'];
                         $user['case_code']=$casecount;
+                        $user['field']=$field;
                         if(isset($user['email'])||!empty($user['email'])){
                         //发送邮件  
                         $email=new SendUser();

@@ -19,10 +19,11 @@ class SendUser
         $user['url']=$url;
 		//邮件主题
         
-	$YouxiangContent=ChatUserLogic::getInstance()->getLanguage($user,7); //获取邮件内容
+//	$YouxiangContent=ChatUserLogic::getInstance()->getLanguage($user,7); //获取邮件内容
+                $content=$user['field']['username'].' has enrolled in the ALLIANZ MALAYSIA/ADVANCE MEDICAL Diabetes Care Programme through the online portal.';
 		$email_data['to']=$to;
-                $email_data['title']=$YouxiangContent['title'];
-                $email_data['content']=$YouxiangContent['content'];
+                $email_data['title']='Reminder of medical service';
+                $email_data['content']=$content;
                 //加入任务队列中
                Queue::push('app\common\jobs\QueueClient@sendMAIL', $email_data, $queue ='jobs');
                 
