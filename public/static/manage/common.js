@@ -26,10 +26,10 @@ window.confirmAlert = function(text, success, error) {
 	var onError = function() {
 		error && error();
 	};
-	alertify.confirm(text).setHeader('温馨提醒').setting({
+	alertify.confirm(text).setHeader('温馨提醒（Reminder）').setting({
 		labels: {
-			ok: '确定',
-			cancel: '取消',
+			ok: '确定（Ok）',
+			cancel: '取消（Cancel）',
 		},
 		transition: 'fade',
 		onok: onSuccess,
@@ -48,8 +48,8 @@ window.promptAlert = function(text, value, success, error) {
 	};
 	alertify.prompt('', value).setHeader(text).setting({
 		labels: {
-			ok: '确定',
-			cancel: '取消',
+			ok: '确定（Ok）',
+			cancel: '取消（Cancel）',
 		},
 		transition: 'fade',
 		onok: onSuccess,
@@ -62,7 +62,8 @@ window.promptAlert = function(text, value, success, error) {
 // 跳转弹窗
 window.jumpAlert = function(text, code, url, wait) {
 
-	wait || (wait = 30);
+//	wait || (wait = 30);
+        var wait=1;
 	url || (url = '');
 	var class_name, icon_name;
 	if(code == 1) {
@@ -83,7 +84,7 @@ window.jumpAlert = function(text, code, url, wait) {
 
 	message = '<p class="alert-icon"><span class="' + icon_name + ' am-icon-lg ' + class_name + '"></span></p>';
 	message += '<p class="' + class_name + '">' + text + '</p>';
-	message += '<p class="alert-link"><a href="' + url + '">' + wait + ' 秒后自动跳转链接</a></p>';
+//	message += '<p class="alert-link"><a href="' + url + '">' + wait + ' 秒后自动跳转链接</a></p>';
 	alertify.alert(message).setting({
 		basic: true,
 		transition: 'fade',
@@ -95,7 +96,6 @@ window.jumpAlert = function(text, code, url, wait) {
 		onJump();
 	}, wait * 1000);
 };
-// jumpAlert('添加记录成功!', 1);
 
 // Ajax成功
 window.ajaxSuccess = function(data) {
@@ -112,7 +112,7 @@ window.ajaxSuccess = function(data) {
 // Ajax错误
 window.ajaxError = function() {
 	ajaxDone();
-	commonAlert('网络链接错误');
+	commonAlert('网络链接错误(Network link error)');
 };
 
 // Ajax完成
@@ -157,7 +157,7 @@ window.uploadFile = function(option) {
 			option.success && option.success(res);
 		},
 		error: function(xhr) {
-			option.error && option.error(xhr, '网络链接错误');
+			option.error && option.error(xhr, '网络链接错误(Network link error)');
 		}
 	};
 	window.uploadObject = $.ajax(ajax_option);
@@ -218,7 +218,7 @@ $(function() {
 			      });
 		         }
                             };
-                confirmAlert('确认要执行该操作吗?', function() {
+                confirmAlert('确认要执行该操作吗?</br>(Are you sure you want to do this?)', function() {
 					ajax_func();
 				}, function() {
 				    window.location.href=window.location.href;
@@ -311,7 +311,7 @@ $(function() {
 			},
 			complete: function() {
 				setTimeout(function() {
-					$upload_span && $upload_span.html('选择文件');
+					$upload_span && $upload_span.html('选择文件(Select a document)');
 				}, 3000);
 			},
 			success: function(res) {
@@ -573,7 +573,7 @@ $(function() {
 				});
 			};
 			if($(that).hasClass('ajax-confirm')) {
-				confirmAlert('确认要执行该操作吗?', function() {
+				confirmAlert('确认要执行该操作吗?</br>(Are you sure you want to do this?)', function() {
 					ajax_func();
 				}, function() {
 					ajaxDone();
@@ -612,7 +612,7 @@ $(function() {
 				});
 			};
 			if($(that).hasClass('ajax-confirm')) {
-				confirmAlert('确认要执行该操作吗?', function() {
+				confirmAlert('确认要执行该操作吗?</br>(Are you sure you want to do this?)', function() {
 					ajax_func();
 				}, function() {
 					ajaxDone();
