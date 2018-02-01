@@ -228,12 +228,16 @@ $(function() {
                 name: "user_time",
                 value: a.join(",")
             });
-
+            var layerload = layer.open({
+                type: 2
+                ,content: 'loading'
+            });
             $.ajax({
                 url: window.__addurl__,
                 type: "POST",
                 data: $.param(t),
                 success: function(data) {
+                    layer.close(layerload);
                     if(data.code==1){
                          $(".form-feedback-wrapper").show()
                     }else{
@@ -246,6 +250,7 @@ $(function() {
                     }
                 },
                 complete: function() {
+                    layer.close(layerload);
                     $(".medical-form").find("input[type=submit]").prop("disabled", !1),
                     $(".medical-form").find("input[type=submit]").val("submit")
                 }
