@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:57:"D:\www\mlxyadmin\application\manage\view\common\jump.html";i:1495712130;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:57:"D:\www\mlxyadmin\application\manage\view\common\jump.html";i:1517457967;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -51,22 +51,27 @@
 			<div class="jump-area">
 				<h1><span class="<?php echo !empty($code)?'am-icon-check-square':'am-icon-times-circle'; ?> am-icon-lg jump-icon <?php echo !empty($code)?'am-text-success':'am-text-danger'; ?>"></span></h1>
 				<h1 class="jump-tip" title="<?php echo $msg; ?>"><?php echo $msg; ?></h1>
-				<p>
+<!--				<p>
 					<a href="javascript:jumpUrl();"><span class="jump-wait"><?php echo $wait; ?></span> 秒后自动跳转链接</a>
 				</p>
+                                <p>
+					<a href="javascript:jumpUrl();"><span class="jump-wait"><?php echo $wait; ?></span> seconds after the jump automatically</a>
+				</p>-->
 			</div>
 		</div>
 		<script type="text/javascript" src="<?php echo $lib_path; ?>/jquery/2.0.0/jquery.min.js?_=<?php echo $site_version; ?>"></script>
 		<script>
-			var wait = "<?php echo $wait; ?>";
+                    
+//			var wait = "<?php echo $wait; ?>";
+                       var wait = "2";
 			var url = "<?php echo $url; ?>";
-
+                       
 			$(function() {
 				countDown();
 			});
 
 			function countDown() {
-				$('.jump-wait').text(wait);
+//				$('.jump-wait').text(wait);
 				wait--;
 				if(wait <= 0) {
 					setTimeout(jumpUrl, 1000);

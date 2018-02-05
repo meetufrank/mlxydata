@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:54:"D:\www\mlxyadmin\application\dcp\view\login\index.html";i:1515466484;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:54:"D:\www\mlxyadmin\application\dcp\view\login\index.html";i:1517461352;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -148,13 +148,13 @@
 					<form class="form-horizontal" name="formLogin"  role="form" id="login_form"  method="post" action="<?php echo url('login/dologin'); ?>">
 						<span class="heading">Log In</span>
 						<div class="form-group">
-							<input type="text" class="form-control" id="user_name" name="user_name" placeholder="User Name">
+							<input type="text" class="form-control" id="user_name" name="user_name" placeholder="Username" >
 							<i class="fa fa-user"></i>
 						</div>
 						<div class="form-group help" >
-							<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
+							<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" >
 							<i class="fa fa-lock"></i>
-							<a href="#" class="fa fa-question-circle"></a>
+<!--							<a href="#" class="fa fa-question-circle"></a>-->
 						</div>
 						<div class="form-group">
 							<!-- <div class="main-checkbox">

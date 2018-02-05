@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:64:"D:\www\mlxyadmin\application\dcp\view\index\service_details.html";i:1515469983;s:54:"D:\www\mlxyadmin\application\dcp\view\common\base.html";i:1515467749;s:56:"D:\www\mlxyadmin\application\dcp\view\common\header.html";i:1515469347;s:56:"D:\www\mlxyadmin\application\dcp\view\common\footer.html";i:1517386932;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:64:"D:\www\mlxyadmin\application\dcp\view\index\service_details.html";i:1515469983;s:54:"D:\www\mlxyadmin\application\dcp\view\common\base.html";i:1517472451;s:56:"D:\www\mlxyadmin\application\dcp\view\common\header.html";i:1515469347;s:56:"D:\www\mlxyadmin\application\dcp\view\common\footer.html";i:1517386932;}*/ ?>
 <!doctype html>
 <html lang="">
 <head>
@@ -538,6 +538,7 @@
   <script type="text/javascript" src="<?php echo $static_path; ?>/advance/js/vendor/DatetimePicker-i18n-zh-CN.js?_=<?php echo $site_version; ?>"></script> 
  
   <script type="text/javascript" src="<?php echo $static_path; ?>/advance/js/main.js?_=<?php echo $site_version; ?>"></script>
+  <script src="<?php echo $static_path; ?>/layer_mobile/layer.js?_=<?php echo $site_version; ?>"></script>
   <script type="text/javascript" src="<?php echo $static_path; ?>/advance/js/forms.js?_=<?php echo $site_version; ?>"></script>
 
  

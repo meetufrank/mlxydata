@@ -285,7 +285,9 @@ class CaseModel extends Model
                  //给公司绑定的每个邮箱发送邮件
                  //查询公司绑定的邮箱列表
                  $companylist=db('cases_company_email')->where(['c_id'=>$companyid])->select();
-                 
+                 if(!isset($field['username'])){
+                     $field['username']=$field['firstname'].' '.$field['lastname'];
+                 }
                  if(!empty($companylist)){
                      
                      foreach ($companylist as $key => $value) {
