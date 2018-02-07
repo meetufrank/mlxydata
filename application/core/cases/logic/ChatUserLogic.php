@@ -137,6 +137,7 @@ class ChatUserLogic extends Logic
      * 获取用户接收邮件或短信语言
      */
     public function getLanguage($data,$k) {
+        error_reporting(E_ERROR | E_WARNING | E_PARSE);  //修改错误级别，防止报错
         isset($data['case_code']) ||  $data['case_code']='';
         isset($data['nickname']) ||  $data['nickname']='';
         isset($data['url']) ||  $data['url']='';
@@ -224,7 +225,7 @@ class ChatUserLogic extends Logic
                   'title'=>'汇医服务提醒'
                  ],
                 7=>[
-                   'content'=>'A new patient has enrolled into ALLIANZ AYUDHYA/ ADVANCE MEDICAL Expert Second Medical Opinion (ESMO) service portal.', 
+                   'content'=>'A new patient,'.$user['field']['username'].' has enrolled in the ALLIANZ MALAYSIA/ADVANCE MEDICAL Diabetes Care Programme through the online portal.',
                    'description'=>'为用户添加成功case发送的邮件内容',
                     'title'=>'Reminder of medical service'
                 ]
@@ -335,7 +336,7 @@ class ChatUserLogic extends Logic
                   'title'=>'Reminder of medical service'
                  ],
                 7=>[
-                   'content'=>'A new patient has enrolled into ALLIANZ AYUDHYA/ ADVANCE MEDICAL Expert Second Medical Opinion (ESMO) service portal.', 
+                   'content'=>'A new patient,'.$user['field']['username'].' has enrolled in the ALLIANZ MALAYSIA/ADVANCE MEDICAL Diabetes Care Programme through the online portal.',
                    'description'=>'为用户添加成功case发送的邮件内容',
                     'title'=>'Reminder of medical service'
                 ]
