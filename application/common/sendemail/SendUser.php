@@ -23,9 +23,10 @@ class SendUser
                 $email_data['to']=$to;
                 $email_data['title']=$YouxiangContent['title'];
                 $email_data['content']=$YouxiangContent['content'];
+              
                 //加入任务队列中
-               Queue::push('app\common\jobs\QueueClient@sendMAIL', $email_data, $queue ='jobs');
-                
+             Queue::push('app\common\jobs\QueueClient@sendMAIL', $email_data, $queue ='jobs');
+             //  $emailtrue = $emails->activeEmail($to,$YouxiangContent['title'],$YouxiangContent['content']); 
     }
 
 }

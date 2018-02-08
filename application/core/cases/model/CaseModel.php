@@ -295,6 +295,12 @@ class CaseModel extends Model
                         $user['email']=$value['email'];
                         $user['language']=$value['language'];
                         $user['case_code']=$casecount;
+                        //根据公司获取case邮件内容
+                        $company['addcase_content'] || $company['addcase_content']=1;
+                        $emailcontent=db('cases_email_content')->where(['id'=>$company['addcase_content']])->find();
+                        $field['content']=$emailcontent['content'];
+                        $field['econtent']=$emailcontent['econtent'];
+                        $field=$this->updatefield($field);
                         $user['field']=$field;
                         if(isset($user['email'])||!empty($user['email'])){
                         //发送邮件  
@@ -313,7 +319,56 @@ class CaseModel extends Model
        } 
        
     }
-
+   
+    //整理字段
+    public function updatefield($field) {
+        //查询case类型
+            $casetype=db('cases_case_type')->where(['id'=>$field['case_type']])->find();
+            $field['typename']=$casetype['typename'];
+            $field['typeename']=$casetype['typeename'];
+          
+        //处理性别
+             if($field['sex']==1){
+                 $field['sexname']='男';
+                 $field['sexename']='Male';
+             }else{
+                 $field['sexname']='女';
+                 $field['sexename']='Female';
+             }
+        //是否本人
+             if($field['isme']==1){
+                 $field['ismename']='是';
+                 $field['ismeename']='Yes';
+             }else{
+                 $field['sexname']='否';
+                 $field['sexename']='No';
+             }
+        //与患者关系
+             if($field['isme']==1){
+                 $field['relationship']='';
+               
+             }
+        //国家
+         $country= db('cases_country')->where(['id'=>$field['country']])->find();
+         $field['countryname']=$country['name'];
+         $field['countryename']=$country['ename'];
+       
+         if($field['country']==1){
+             //省
+             $province= db('cases_area')->where(['id'=>$field['province']])->find();
+             $field['provincename']=$province['area_name'];
+             //市
+             $city= db('cases_area')->where(['id'=>$field['city']])->find();
+             $field['cityname']=$city['area_name'];
+             //区
+             $district= db('cases_area')->where(['id'=>$field['district']])->find();
+             $field['districtname']=$district['area_name'];
+             
+         }
+         
+        return $field;
+         
+    }
 //    
 //        /**
 //     * 自动设置文章key
