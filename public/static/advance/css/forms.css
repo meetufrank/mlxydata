@@ -488,14 +488,14 @@
 		height: 50px;
 		margin-bottom: 15px;
 		letter-spacing: 4px;
-		font-size: 2.1em
+		font-size: 1.5em //2.1
 	}
 }
 
 @media (min-width:993px) {
 	.form-choice-wrapper .btn-medical {
 		height: 60px;
-		font-size: 2.2em;
+		font-size: 1.5em;  //2.0
 		letter-spacing:4px;
 		margin-bottom: 30px
 	}
@@ -504,7 +504,7 @@
 @media (min-width:1200px) {
 	.form-choice-wrapper .btn-medical {
 		height: 70px;
-		font-size: 2em;
+		font-size: 2em; 
 		//font-size: 2.2em;
 		letter-spacing: 5px;
 		margin-bottom: 30px

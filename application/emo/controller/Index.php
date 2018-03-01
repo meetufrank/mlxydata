@@ -164,7 +164,7 @@ class Index extends Controller
                 'treatment_doctor' => $request->param('treatment_doctor'),
                 'treatment_hospital' => $request->param('treatment_hospital'),
                  'specialty' => $request->param('specialty'),
-                 'case_type' => 2,
+                 'case_type' => 1,
                 'sort' => $request->param('sort',0), 
                 'country'=>$request->param('country',3),
                 'email'=>str_replace(' ', '',$request->param('email')),

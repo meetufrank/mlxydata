@@ -141,8 +141,12 @@ class ChatUserLogic extends Logic
         isset($data['case_code']) ||  $data['case_code']='';
         isset($data['nickname']) ||  $data['nickname']='';
         isset($data['url']) ||  $data['url']='';
+        isset($data['eurl']) ||  $data['eurl']='';
         isset($data['user_name']) ||  $data['user_name']='';
         isset($data['pwd']) ||  $data['pwd']='';
+        isset($data['typename']) ||  $data['typename']='';
+        isset($data['typeename']) ||  $data['typeename']='';
+        if(is_array($data)){
          if(isset($data['field'])){
             if($data['field']['country']==1){
                 $address=$data['field']['provincename'].'-'.$data['field']['cityname'].'-'.$data['field']['districtname'].'&nbsp;&nbsp;'.$data['field']['address'];
@@ -152,89 +156,13 @@ class ChatUserLogic extends Logic
             }
         }
         if($data['field']['content']){
-          eval('$content='.$data['field']['content'].';');
+          eval('$casecontent='.$data['field']['content'].';');
        }
        if($data['field']['econtent']){
-          eval('$content='.$data['field']['econtent'].';');
+          eval('$caseecontent='.$data['field']['econtent'].';');
        }
 
-        $addcasestr_en= <<<EOT
-               <div>  {$content} Case details are as follows:</div> 
-    	<table style="border:1px solid #ddd;">
-    	
-    	<thead  style="border:1px solid #ddd;">
-    		<tr>
-    			<th colspan="2">Case信息</th>
-    		</tr>
-    	</thead>
-    	<tbody style="margin-top:10px;">
-    		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Case Type</td>
-    			<td class="TableRight" >{$data['field']['typeename']}</td>
-    		</tr>
-		<tr>
-    			<td class="TableLeft" >Policy Number</td>
-    			<td class="TableRight" >{$data['policy']}</td>
-    		</tr>		
-    		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Patient Name</td>
-    			<td class="TableRight" >{$data['field']['username']}</td>
-    		</tr>
-    		<tr>
-    			<td class="TableLeft" >Date of Birth</td>
-    			<td class="TableRight" >{$data['field']['birthday']}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Gender</td>
-    			<td class="TableRight" >{$data['field']['sexename']}</td>
-    		</tr>
-	        <tr>
-    			<td class="TableLeft" >If you are the patient</td>
-    			<td class="TableRight" >{$data['field']['ismeename']}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Relationship with the patient</td>
-    			<td class="TableRight" >{$data['field']['relationship']}</td>
-    		</tr>
-                <tr>
-    			<td class="TableLeft" >Name of applicant</td>
-    			<td class="TableRight" >{$data['field']['applicant_name']}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Country</td>
-    			<td class="TableRight" >{$data['field']['countryename']}</td>
-    		</tr>
-                <tr>
-    			<td class="TableLeft" >Address</td>
-    			<td class="TableRight" >{$address}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Zip code</td>
-    			<td class="TableRight" >{$data['field']['zip_code']}</td>
-    		</tr>
-                <tr>
-    			<td class="TableLeft" >Preferred Telephone Number</td>
-    			<td class="TableRight" >{$data['field']['preferred_phone']}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Alternative Telephone Number</td>
-    			<td class="TableRight" >{$data['field']['standby_phone']}</td>
-    		</tr>
-                <tr>
-    			<td class="TableLeft" >Email</td>
-    			<td class="TableRight" >{$data['field']['email']}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Convenient Time to be Contacted</td>
-    			<td class="TableRight" >{$data['field']['preferred_time']}</td>
-    		</tr>
-                <tr>
-    			<td class="TableLeft" >Description</td>
-    			<td class="TableRight" >{$data['field']['illness']}</td>
-    		</tr>
-    	</tbody>
-    </table>
-EOT;
+        }
            
         $arr= [
            1=>[
@@ -318,7 +246,7 @@ EOT;
                   'title'=>'汇医服务提醒'
                  ],
                 7=>[
-                   'content'=>$addcasestr_en,
+                   'content'=>$caseecontent,
                    'description'=>'为用户添加成功case发送的邮件内容',
                     'title'=>'Reminder of medical service'
                 ]
@@ -429,7 +357,7 @@ EOT;
                   'title'=>'Reminder of medical service'
                  ],
                 7=>[
-                   'content'=>$addcasestr_en,
+                   'content'=>$caseecontent,
                    'description'=>'为用户添加成功case发送的邮件内容',
                     'title'=>'Reminder of medical service'
                 ]

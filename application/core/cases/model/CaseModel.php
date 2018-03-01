@@ -296,8 +296,8 @@ class CaseModel extends Model
                         $user['language']=$value['language'];
                         $user['case_code']=$casecount;
                         //根据公司获取case邮件内容
-                        $company['addcase_content'] || $company['addcase_content']=1;
-                        $emailcontent=db('cases_email_content')->where(['id'=>$company['addcase_content']])->find();
+                        $value['casecontent'] || $value['casecontent']=1;
+                        $emailcontent=db('cases_email_content')->where(['id'=>$value['casecontent']])->find();
                         $field['content']=$emailcontent['content'];
                         $field['econtent']=$emailcontent['econtent'];
                         $field=$this->updatefield($field);
