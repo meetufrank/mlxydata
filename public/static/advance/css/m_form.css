@@ -1,3 +1,5 @@
+
+
 .form-wrapper
 {
     max-width: 700px;
@@ -32,7 +34,7 @@
 {
     float: left;
 
-    width: 33.3333333%;
+    width: 33.333%;
 }.m-form-step-indicator span
 {
     // font-size: 1.5em;
@@ -1132,6 +1134,19 @@
     margin-bottom: 10px;
     text-align: center;
 }
+
+.radio {
+    position: absolute;
+    width: 131px;
+    height: 30px;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    opacity: 0 !important;
+    
+}
+
 @media (max-width:767px) {
     .mform-group{
         padding-left: 15px;

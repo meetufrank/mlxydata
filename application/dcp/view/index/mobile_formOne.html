@@ -18,16 +18,8 @@
   <![endif]-->
     <link rel="stylesheet" type="text/css" href="{$static_path}/advance/css/app.css">
     <link rel="stylesheet" type="text/css" href="{$static_path}/advance/css/m_form.css">
-
-    <style>
-        
-        .m-form-step-indicator div{
-        width:25%! important;
-    }
-    </style>
+    
 </head>
-
-
 
 <body>
     <div id="page-wrapper">
@@ -43,7 +35,7 @@
                 <div><span>Patient information</span></div>
                 <div><span>Applicant information</span></div>
                 <div><span>Description</span></div>
-              <div><span>addition</span></div>
+               
             </div>
             <form class="medical-form  form-horizontal" role="form">
                 <input type="hidden" id="form-type" name="case_type" value="{$service_id}">
@@ -226,180 +218,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- 1 -->
-                <div class="form-section  Onhide">
-                    <div style="height:600px;">
-                        <div class="form-group">
-                            <label for="patient-gender" class="col-xs-4 col-sm-3 control-label medical-label">Hypertension</label>
-                            <div class="col-xs-8 col-sm-9">
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender11">
-                                        <input class="radio" type="radio" name="Hypertension" id="1" value="1"><span>yes</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender2">
-                                        <input class="radio" type="radio" name="Hypertension" id="patient-gender2" value="0"><span>no</span></label>
-                                </div>
-                                <div class="col-xs-12 gender-error"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="patient-gender" class="col-xs-4 col-sm-3 control-label medical-label">High cholesterol</label>
-                            <div class="col-xs-8 col-sm-9">
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender12">
-                                        <input class="radio" type="radio" name="Highcholesterol" id="patient-gender12" value="1"><span>yes</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender2">
-                                        <input class="radio" type="radio" name="Highcholesterol" id="patient-gender2" value="0"><span>no</span></label>
-                                </div>
-                                <div class="col-xs-12 gender-error"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="patient-gender" class="col-xs-4 col-sm-3 control-label medical-label">Heart disease</label>
-                            <div class="col-xs-8 col-sm-9">
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender13">
-                                        <input class="radio" type="radio" name="Heartdisease" id="patient-gender13" value="1"><span>yes</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender2">
-                                        <input class="radio" type="radio" name="Heartdisease" id="patient-gender2" value="0"><span>no</span></label>
-                                </div>
-                                <div class="col-xs-12 gender-error"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="patient-gender" class="col-xs-4 col-sm-3 control-label medical-label">Kidney disease</label>
-                            <div class="col-xs-8 col-sm-9">
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender14">
-                                        <input class="radio" type="radio" name="Kidneydisease" id="patient-gender14" value="1"><span>yes</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender2">
-                                        <input class="radio" type="radio" name="Kidneydisease" id="patient-gender2" value="0"><span>no</span></label>
-                                </div>
-                                <div class="col-xs-12 gender-error"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="patient-gender" class="col-xs-4 col-sm-3 control-label medical-label">Eye disease</label>
-                            <div class="col-xs-8 col-sm-9">
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender15">
-                                        <input class="radio" type="radio" name="EyeDisease" id="patient-gender15" value="1"><span>yes</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender2">
-                                        <input class="radio" type="radio" name="EyeDisease" id="patient-gender2" value="0"><span>no</span></label>
-                                </div>
-                                <div class="col-xs-12 gender-error"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="patient-gender" class="col-xs-4 col-sm-3 control-label medical-label">Foot or leg problems</label>
-                            <div class="col-xs-8 col-sm-9">
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender16">
-                                        <input class="radio" type="radio" name="problems" id="patient-gender16" value="1"><span>yes</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender2">
-                                        <input class="radio" type="radio" name="problems" id="patient-gender2" value="0"><span>no</span></label>
-                                </div>
-                                <div class="col-xs-12 gender-error"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="patient-gender" class="col-xs-4 col-sm-3 control-label medical-label">Mental stress issues</label>
-                            <div class="col-xs-8 col-sm-9">
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender17">
-                                        <input class="radio" type="radio" name="Mental" id="patient-gender17" value="1"><span>yes</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender2">
-                                        <input class="radio" type="radio" name="Mental" id="patient-gender2" value="0"><span>no</span></label>
-                                </div>
-                                <div class="col-xs-12 gender-error"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="patient-gender" class="col-xs-4 col-sm-3 control-label medical-label">Male or female concerns</label>
-                            <div class="col-xs-8 col-sm-9">
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender18">
-                                        <input class="radio" type="radio" name="concerns" id="patient-gender18" value="1"><span>yes</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 gender-single">
-                                    <label for="patient-gender2">
-                                        <input class="radio" type="radio" name="concerns" id="patient-gender2" value="0"><span>no</span></label>
-                                </div>
-                                <div class="col-xs-12 gender-error"></div>
-                            </div>
-                        </div>
-                        <div class="form-group date-select">
-                            <label for="birth-date" class="col-xs-4 col-sm-3 control-label medical-label">Smoking</label>
-                            <div class="col-xs-8 col-sm-9" id="patient-birth2">
-                                <input type="text" class="form-control" name="cirthday" data-field="date" readonly="">
-                                <div class="lo">
-                                    <div id="dtCox"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group date-select">
-                            <label for="birth-date" class="col-xs-4 col-sm-3 control-label medical-label">Alcohol </label>
-                            <div class="col-xs-8 col-sm-9">
-                                <input type="text" class="form-control" id="patient-birth3" name="dirthday" data-field="date" readonly="">
-                                <div class="box-container">
-                                    <div id="dtDox"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group date-select">
-                            <label for="birth-date" class="col-xs-4 col-sm-3 control-label medical-label"> Most recent blood pressure </label>
-                            <div class="col-xs-8 col-sm-9">
-                                <input type="text" class="form-control" id="patient-birth6" name="dirthday" data-field="date" readonly="">
-                                <div class="box-container">
-                                    <div id="dtEox"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group date-select">
-                            <label for="birth-date" class="col-xs-4 col-sm-3 control-label medical-label"> Most recent HbA1c </label>
-                            <div class="col-xs-8 col-sm-9">
-                                <input type="text" class="form-control" id="patient-birth5" name="dirthday" data-field="date" readonly="">
-                                <div class="box-container">
-                                    <div id="dtFox"></div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="form-group">
-                            <label style="margin:10px 0;" for="patient-gender" class="col-xs-12 col-sm-12 control-label medical-label">I allow Advance Medical to obtain my medical records from Allianz Life Insurance Malaysia.</label>
-                            <div class="col-xs-8 col-sm-9">
-                                <div class="col-xs-6 col-sm-6 gender-single">
-                                    <label for="patient-gender19">
-                                        <input class="radio" type="radio" name="Medical" id="patient-gender19" value="1"><span>yes</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 gender-single">
-                                    <label for="patient-gender2">
-                                        <input class="radio" type="radio" name="Medical" id="patient-gender2" value="0"><span>no</span></label>
-                                </div>
-                                <div class="col-xs-12 gender-error"></div>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                </div>
-                <!-- 1 -->
+                
+                
                 <div class="form-section">
                     <div class="form-group">
                         <label class="col-xs-12 col-sm-12 control-label medical-label change-label">I have already read and accept the consent terms</label>
