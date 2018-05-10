@@ -45,7 +45,7 @@
 //			}
 			
 
-    public function activeEmail($to,$subject,$body){
+    public function activeEmail($to,$subject,$body,$sendperson=''){
        
 							//引入类
 							//Vendor('PHPMailer.PHPMailerAutoload');
@@ -65,8 +65,13 @@
 							$mail->Username = 'patientportal@advance-medical.com.cn';                 // SMTP username
 							$mail->Password = 'Advance2017';                           // SMTP password
                                                         
-                                                        $mail->Port=25;  //587
-							$mail->setFrom('patientportal@advance-medical.com.cn', '汇医服务');
+                                                        $mail->Port=587;  //587   25
+                                                        if($sendperson==''){
+                                                            $mail->setFrom('patientportal@advance-medical.com.cn', 'Advance Medical');
+                                                        }else{
+                                                            $mail->setFrom('patientportal@advance-medical.com.cn', $sendperson);
+                                                        }
+							
 					                
 							//发送邮件地址
 							if($to){

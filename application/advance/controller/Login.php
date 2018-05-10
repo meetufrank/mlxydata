@@ -51,7 +51,8 @@ class Login extends Controller
             }
            $where=[
                'user_name'=>$userName,
-               'u_status'=>1
+               'u_status'=>1,
+               'delete_time'=>0
            ];
             $user = $chatuser->field('id,user_name,pwd,sign,avatar,is_manager')
                 ->where($where)->find();
