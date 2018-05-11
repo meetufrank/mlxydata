@@ -14,8 +14,6 @@
 //data
 
 // NO不能选择
-
-
 $("input[name='Smoking']").click(function(){
     var smoking = $("input:checked[name='Smoking']").val();
    if (smoking == 0 ){
@@ -184,7 +182,7 @@ $(function() {
             "pressure" === e ? ($(".m-form-step-indicator").addClass("m-form-step-indicator2"), $(".medical-form").addClass("medical-form2"), $(".contract-context").addClass("contract-context2"), $("#form-type").val(2), $(".form-feedback-wrapper").addClass("form-feedback-wrapper2"), $(".optional-checkbox").css({ "display": "block", "color": "#0775aa" })) : "private" === e ? ($(".m-form-step-indicator").addClass("m-form-step-indicator3"), $(".medical-form").addClass("medical-form3"), $(".contract-context").addClass("contract-context3"), $("#form-type").val(3), $(".form-feedback-wrapper").addClass("form-feedback-wrapper3"), $(".optional-checkbox").css({ "display": "block", "color": "#9d3373" })) : "medical" === e && ($(".m-form-step-indicator").addClass("m-form-step-indicator4"), $(".medical-form").addClass("medical-form4"), $(".contract-context").addClass("contract-context4"), $("#form-type").val(4), $(".form-feedback-wrapper").addClass("form-feedback-wrapper4"), $(".optional-checkbox").css({ "display": "block", "color": "#563e96" }))
         }
         $(".optional-checkbox").css("display", "block"),
-            $(".change-label").text("Please briefly describe your diagnosis and questions");
+            $(".change-label").text("I glve permission to Allianz Malaysia to release my medival records to Advance Medical");
         $(".optional-checkbox").click(function() {
             $("#doctor-checkbox").is(":checked") ? $(".doctor-group").css("display", "block") : $(".doctor-group").removeAttr("style")
         })

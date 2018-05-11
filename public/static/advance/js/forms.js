@@ -231,7 +231,7 @@ $(function() {
             }),
             $(".btn-medical").click(function() {
                 $(".form-inner-wrapper").addClass("form-show"),
-                    $(".change-label").text("I have already read and accept the consent terms"),
+                    $(".change-label").text("I glve permission to Allianz Malaysia to release my medival records to Advance MedicalI have already read and accept the consent terms"),
                     e(0)
             }),
             $(".btn-expert").click(function() {
