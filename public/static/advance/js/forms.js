@@ -1,31 +1,114 @@
-(function() {
+// data
 
+ $("#patient-birth").datetimePicker({
+        //  title: '自定义格式',
+        yearSplit: '年',
+        monthSplit: '月',
+        dateSplit: '日',
 
+        times: function () {
 
-
-
-    $("#patient-birth2").click(function() {
-        $('#dtCox').DateTimePicker({
-            language: "zh-EN",
-            addEventHandlers: function() {
-                var oDTP = this;
-                oDTP.settings.minDate = oDTP.getDateTimeStringInFormat("Date", "yyyy-MM-dd", new Date(1899, 1, 1));
-                oDTP.settings.maxDate = oDTP.getDateTimeStringInFormat("Date", "yyyy-MM-dd", new Date());
-            }
-        });
-    });
-
-})()
-$("#patient-birth3").click(function() {
-    $('#dtDox').DateTimePicker({
-        language: "zh-EN",
-        addEventHandlers: function() {
-            var oDTP = this;
-            oDTP.settings.minDate = oDTP.getDateTimeStringInFormat("Date", "yyyy-MM-dd", new Date(1899, 1, 1));
-            oDTP.settings.maxDate = oDTP.getDateTimeStringInFormat("Date", "yyyy-MM-dd", new Date());
+        },
+        onChange: function (picker, values, displayValues) {
+            console.log(values);
         }
+
+
     });
+
+
+//data
+
+// NO不能选择
+
+
+$("input[name='Smoking']").click(function(){
+    var smoking = $("input:checked[name='Smoking']").val();
+   if (smoking == 0 ){
+    $("#SmoKing").attr("disabled","disabled").css('cursor','not-allowed').val("");
+    
+   }else{
+     $("#SmoKing").removeAttr("disabled","disabled").css('cursor','pointer');
+     
+
+   }
+    console.log(smoking);
+
+    
+})
+// NO不能选择
+
+$("#SmoKing").datetimePicker({
+        //  title: '自定义格式',
+        yearSplit: '年',
+        monthSplit: '月',
+        dateSplit: '日',
+
+        times: function () {
+
+        },
+        onChange: function (picker, values, displayValues) {
+            console.log(values);
+        }
 });
+
+$("input[name='Alcohol']").click(function(){
+    var Alcohol = $("input:checked[name='Alcohol']").val();
+   if (Alcohol == 0 ){
+    $("#Alcohol").attr("disabled","disabled").css('cursor','not-allowed').val("");
+    
+   }else{
+     $("#Alcohol").removeAttr("disabled","disabled").css('cursor','pointer');
+   }
+    console.log(Alcohol);   
+});
+
+
+$("#Alcohol").datetimePicker({
+        //  title: '自定义格式',
+        yearSplit: '年',
+        monthSplit: '月',
+        dateSplit: '日',
+
+        times: function () {
+
+        },
+        onChange: function (picker, values, displayValues) {
+            console.log(values);
+        }
+});
+
+$("#pressure").datetimePicker({
+        //  title: '自定义格式',
+        yearSplit: '年',
+        monthSplit: '月',
+        dateSplit: '日',
+
+        times: function () {
+
+        },
+        onChange: function (picker, values, displayValues) {
+            console.log(values);
+        }
+});
+
+$("#HbA1c").datetimePicker({
+        //  title: '自定义格式',
+        yearSplit: '年',
+        monthSplit: '月',
+        dateSplit: '日',
+
+        times: function () {
+
+        },
+        onChange: function (picker, values, displayValues) {
+            console.log(values);
+        }
+});
+
+
+
+
 
 
 
@@ -191,7 +274,6 @@ $(function() {
                         e.settings.maxDate = e.getDateTimeStringInFormat("Date", "yyyy-MM-dd", new Date)
                 }
             }),
-
             $(".relation-between").click(function() {
 
                 $("#is-patient-self1").is(":checked") ? ($("#other-relation").prop("disabled", !0), $("#other-relation").val("0"), $("#other-relation").addClass("not-mandatory"), $("#applicant-name").val($("#firstname").val() + ' ' + $("#lastname").val())) : $("#is-patient-self2").is(":checked") && ($("#other-relation").prop("disabled", !1), $("#other-relation").removeClass("not-mandatory"))
@@ -261,6 +343,31 @@ $(function() {
             // $("#contract-para").perfectScrollbar(),
             Ps.initialize(document.getElementById("contract-para"))
     }),
+//     $( "input[name='SmoKing']").click(function(e){
+           
+// e.currentTarget.blur();
+//         $("#dtCox").DateTimePicker({
+//             language: "zh-EN",
+//             addEventHandlers: function() {
+//                 var e = this;
+//                 e.settings.minDate = e.getDateTimeStringInFormat("Date", "yyyy-MM-dd", new Date(1890, 1, 1)),
+//                     e.settings.maxDate = e.getDateTimeStringInFormat("Date", "yyyy-MM-dd", new Date)
+//             }
+//         });
+//     }),  
+    //   $(function () {
+    //     $('#datetimepicker6').datetimepicker();
+    //     $('#datetimepicker7').datetimepicker({
+    //         useCurrent: false //Important! See issue #1075
+    //     });
+    //     $("#datetimepicker6").on("dp.change", function (e) {
+    //         $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+    //     });
+    //     $("#datetimepicker7").on("dp.change", function (e) {
+    //         $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+    //     });
+    // }),
+    
     $(function() {
         $(".medical-form").validate({
                 rules: {
@@ -269,7 +376,7 @@ $(function() {
                     },
                     birthday: {
                         required: !0,
-                        date: !0
+                        
                     },
                     sex: {
                         required: !0

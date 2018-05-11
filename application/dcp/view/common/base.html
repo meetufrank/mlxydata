@@ -19,6 +19,11 @@
   <link rel="stylesheet" type="text/css" href="{$static_path}/advance/css/app.css?_={$site_version}">
   <link rel="stylesheet" type="text/css" href="{$static_path}/advance/css/forms.css?_={$site_version}">
   <link rel="stylesheet" type="text/css" href="{$static_path}/advance/css/new.css?_={$site_version}">
+  
+   <!-- <link rel="stylesheet" href="date/css/weui.min.css">
+    <link rel="stylesheet" href="date/css/jquery-weui.css"> -->
+<link rel="stylesheet" type="text/css" href="{$static_path}/advance/date/css/jquery-weui.css?_={$site_version}">
+
   {block name="style"}{/block}
 </head>
 <body class="loading  ">
@@ -30,7 +35,12 @@
 {include file="common/footer"/}
 {/block}   
     
-  <script type="text/javascript" src="{$static_path}/advance/js/vendor/jquery-1.12.0.min.js?_={$site_version}"></script>
+<!-- data -->
+<script type="text/javascript" src="{$static_path}/advance/date/js/jquery-2.1.4.js?_={$site_version}"></script>
+<script type="text/javascript" src="{$static_path}/advance/date/js/fastclick.js?_={$site_version}"></script>
+<script type="text/javascript" src="{$static_path}/advance/date/js/jquery-weui.js?_={$site_version}"></script>
+<!-- data -->
+
   <script type="text/javascript" src="{$static_path}/advance/js/vendor/jquery.validate.min.js?_={$site_version}"></script>
   <script type="text/javascript" src="{$static_path}/advance/js/vendor/jquery.flexslider.js?_={$site_version}"></script>
   <script type="text/javascript" src="{$static_path}/advance/js/vendor/jquery.city.select.min.js?_={$site_version}"></script>
@@ -45,7 +55,7 @@
   <script type="text/javascript" src="{$static_path}/advance/js/main.js?_={$site_version}"></script>
   <script src="{$static_path}/layer_mobile/layer.js?_={$site_version}"></script>
   <script type="text/javascript" src="{$static_path}/advance/js/forms.js?_={$site_version}"></script>
-
+ 
  
   <script type="text/javascript">
       window.__addurl__='{:url(\'Index/addCase\')}';
