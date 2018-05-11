@@ -41,7 +41,7 @@ class QueueClient
     private function send($data) 
     {
         $sendemail = new Cs();
-        $result    = $sendemail->activeEmail($data['to'],$data['title'],$data['content']); 
+        $result    = $sendemail->activeEmail($data['to'],$data['title'],$data['content'],$data['sendperson']); 
         if ($result) {
             return true;
         } else {
