@@ -13,11 +13,11 @@ class CaseValidate extends Validate
      */
     protected $rule = [
 
-        'username' =>['require','max'=>20],
+        'username' =>['require','max'=>50],
         'birthday' => 'require|date',
         'sex' => 'require',
         'relationship'=>'requireIf:isme,0',
-        'applicant_name' => ['require','max'=>20],
+        'applicant_name' => ['require','max'=>50],
         'country'=>'require',
         'province'=>'requireIf:country,1',
         'city'=>'requireIf:country,1',
@@ -40,14 +40,14 @@ class CaseValidate extends Validate
     protected $message = [
         'username.require' => 'The patient\'s name must be filled in',
         'username.regex'=>'The patient\'s name can only contain Chinese or English',
-        'username.max'=>'The patient\'s name can not be longer than the length of 20',
+        'username.max'=>'The patient\'s name can not be longer than the length of 50',
         'birthday.require' => 'The date of birth can not be empty',
         'birthday.date' => 'The date of birth is not correct',
         'sex.require' => 'Gender must be selected',
         'relationship.requireIf'=>'The relationship with the patient must be filled in',
         'applicant_name.require' => 'Applicant\'s name must be filled in',
         'applicant_name.regex' => 'Applicant\'s name can only contain Chinese or English',
-        'applicant_name.max' => 'Applicant\'s name can not exceed 20 long',
+        'applicant_name.max' => 'Applicant\'s name can not exceed 50 long',
         'preferred_phone.require'=>'Preferred calls must be filled',
         'address.require' => 'The detail address can not be empty',
         'address.max' => 'Address length exceeds 200',

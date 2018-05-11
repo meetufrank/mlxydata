@@ -141,8 +141,12 @@ class ChatUserLogic extends Logic
         isset($data['case_code']) ||  $data['case_code']='';
         isset($data['nickname']) ||  $data['nickname']='';
         isset($data['url']) ||  $data['url']='';
+        isset($data['eurl']) ||  $data['eurl']='';
         isset($data['user_name']) ||  $data['user_name']='';
         isset($data['pwd']) ||  $data['pwd']='';
+        isset($data['typename']) ||  $data['typename']='';
+        isset($data['typeename']) ||  $data['typeename']='';
+        if(is_array($data)){
          if(isset($data['field'])){
             if($data['field']['country']==1){
                 $address=$data['field']['provincename'].'-'.$data['field']['cityname'].'-'.$data['field']['districtname'].'&nbsp;&nbsp;'.$data['field']['address'];
@@ -152,89 +156,13 @@ class ChatUserLogic extends Logic
             }
         }
         if($data['field']['content']){
-          eval('$content='.$data['field']['content'].';');
+          eval('$casecontent='.$data['field']['content'].';');
        }
        if($data['field']['econtent']){
-          eval('$content='.$data['field']['econtent'].';');
+          eval('$caseecontent='.$data['field']['econtent'].';');
        }
 
-        $addcasestr_en= <<<EOT
-               <div>  {$content} Case details are as follows:</div> 
-    	<table style="border:1px solid #ddd;">
-    	
-    	<thead  style="border:1px solid #ddd;">
-    		<tr>
-    			<th colspan="2">Case信息</th>
-    		</tr>
-    	</thead>
-    	<tbody style="margin-top:10px;">
-    		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Case Type</td>
-    			<td class="TableRight" >{$data['field']['typeename']}</td>
-    		</tr>
-		<tr>
-    			<td class="TableLeft" >Policy Number</td>
-    			<td class="TableRight" >{$data['policy']}</td>
-    		</tr>		
-    		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Patient Name</td>
-    			<td class="TableRight" >{$data['field']['username']}</td>
-    		</tr>
-    		<tr>
-    			<td class="TableLeft" >Date of Birth</td>
-    			<td class="TableRight" >{$data['field']['birthday']}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Gender</td>
-    			<td class="TableRight" >{$data['field']['sexename']}</td>
-    		</tr>
-	        <tr>
-    			<td class="TableLeft" >If you are the patient</td>
-    			<td class="TableRight" >{$data['field']['ismeename']}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Relationship with the patient</td>
-    			<td class="TableRight" >{$data['field']['relationship']}</td>
-    		</tr>
-                <tr>
-    			<td class="TableLeft" >Name of applicant</td>
-    			<td class="TableRight" >{$data['field']['applicant_name']}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Country</td>
-    			<td class="TableRight" >{$data['field']['countryename']}</td>
-    		</tr>
-                <tr>
-    			<td class="TableLeft" >Address</td>
-    			<td class="TableRight" >{$address}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Zip code</td>
-    			<td class="TableRight" >{$data['field']['zip_code']}</td>
-    		</tr>
-                <tr>
-    			<td class="TableLeft" >Preferred Telephone Number</td>
-    			<td class="TableRight" >{$data['field']['preferred_phone']}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Alternative Telephone Number</td>
-    			<td class="TableRight" >{$data['field']['standby_phone']}</td>
-    		</tr>
-                <tr>
-    			<td class="TableLeft" >Email</td>
-    			<td class="TableRight" >{$data['field']['email']}</td>
-    		</tr>
-		<tr style="background:#efd3d2;">
-    			<td class="TableLeft" >Convenient Time to be Contacted</td>
-    			<td class="TableRight" >{$data['field']['preferred_time']}</td>
-    		</tr>
-                <tr>
-    			<td class="TableLeft" >Description</td>
-    			<td class="TableRight" >{$data['field']['illness']}</td>
-    		</tr>
-    	</tbody>
-    </table>
-EOT;
+        }
            
         $arr= [
            1=>[
@@ -243,26 +171,30 @@ EOT;
               'data'=>[
                 1=>[
                   'content'=>'【汇医服务】'.$data['nickname'].'(先生/女士),您好,您被指定负责新的case，请及时登录 '.$data['url'].' 选择接收或者拒绝',
-                  'description'=>'被指定case发给casemanager的短信内容'  
+                  'description'=>'被指定case发给casemanager的短信内容',
+                  'short_title'=>'汇医服务'
                  ],
                 2=>[
                   'content'=>[
                      
                      'user'=>"<strong>亲爱的".$data['nickname']."先生/女士,您好!</strong><br/>"
                         ."<br/>"
-                        ."您已经成功的取得了汇医服务申请系统的账号和密码：<br/>"
+                        ."我们了解到，您打算向全球领先的独立医疗咨询和倡导机构Advance Medical的".$data['typename']."提出一个案例。<br/>"
+                        ."<br/>"
+                        ."要加入Advance Medical门户网站，请访问：".$data['url']."<br/>"
                         ."<br/>"
                           ."登录帐号：".$data['user_name']."<br/>"
                         ."<br/>"
                           ."登录密码：".$data['pwd']."<br/>"
                         ."<br/>"
-                          ."您的保险产品覆盖独立国际医学专家意见服务，请参照您的保险条款界定的病种范围，在需要的时候您可以登录 ".$data['url']." 进行病案提交，我们的专案医生将在24（工作）小时内与您联络。<br/>"
-                        ."<br/>"
-                        ."请扫描下方二维码关注公众号，当您的case受理后，您可以进入公众号点击汇医咨询与您的专属医生进行沟通<br/>"
-                        .'<img src="http://demo.advance-medical.com.cn/static/laychat/common/images/ewm.jpg"  style="width:108px;height:108px;"/>'
                        ."<br/>"
-                          ."祝，安康！<br/>"
-                          ."汇医亚太区",
+                          ."登录后，请填写在线注册表格，医生会尽快与您联系以获取更多信息并帮助您解决医疗问题。<br/>"
+                        ."<br/>"
+//                        ."请扫描下方二维码关注公众号，当您的case受理后，您可以进入公众号点击汇医咨询与您的专属医生进行沟通<br/>"
+//                        .'<img src="http://demo.advance-medical.com.cn/static/laychat/common/images/ewm.jpg"  style="width:108px;height:108px;"/>'
+//                       ."<br/>"
+                          ."谢谢，<br/>"
+                          ."Advance医疗（亚太）",
                   
                       'manager'=>"<strong>亲爱的 ".$data['nickname']." 医生,您好!</strong><br/>"
                         ."<br/>"
@@ -274,35 +206,38 @@ EOT;
                         ."<br/>"
                           ."您可以登录 ".$data['url']."/service 进行case处理。<br/>"
                         ."<br/>"
-                      .'<img src="http://demo.advance-medical.com.cn/static/laychat/common/images/ewm.jpg"  style="width:108px;height:108px;"/>'
-                       ."<br/>"
-                          ."请关注公众号，进入点击右下角我的-在线IM系统进行咨询。"
+//                      .'<img src="http://demo.advance-medical.com.cn/static/laychat/common/images/ewm.jpg"  style="width:108px;height:108px;"/>'
+//                       ."<br/>"
+//                          ."请关注公众号，进入点击右下角我的-在线IM系统进行咨询。"
                       
                       
                   ],
                   'description'=>'添加用户帐号需要发送的邮件内容',
-                  'title'=>'汇医服务申请账号和密码'
-                    
+                  'title'=>'您的高级医疗门户用户名和密码已准备就绪',
+                  'short_title'=>'汇医服务'
                  ],
                 3=>[
                   'content'=>"您好,".$data['nickname'].":<br/>"
                           ."帐号：".$data['user_name']."<br/>修改"
                           ."最新密码为：".$data['pwd']."<br/>"
                           ."提示：若遗忘密码可联系管理员重置。"
-                          ."<br/>"
-                          ."请扫描下方二维码关注公众号，当您的case受理后，您可以进入公众号点击汇医咨询与您的专属医生进行沟通<br/>"
-                          .'<img src="http://demo.advance-medical.com.cn/static/laychat/common/images/ewm.jpg"  style="width:108px;height:108px;"/>'
                           ."<br/>",
+//                          ."请扫描下方二维码关注公众号，当您的case受理后，您可以进入公众号点击汇医咨询与您的专属医生进行沟通<br/>"
+//                          .'<img src="http://demo.advance-medical.com.cn/static/laychat/common/images/ewm.jpg"  style="width:108px;height:108px;"/>'
+//                          ."<br/>",
                   'description'=>'修改用户密码需要发送的邮件内容',
-                  'title'=>'用户密码修改成功提醒'
+                  'title'=>'用户密码修改成功提醒',
+                  'short_title'=>'汇医服务'
                  ],
                 4=>[
                   'content'=>'【汇医服务】'.$data['nickname'].'医生,您好,有患者向您咨询问题，请及时登录  '.$data['url'].'/service  ，尽快回复',
-                  'description'=>'用户寻求帮助，casemanager不在线casemanager收到的短信'  
+                  'description'=>'用户寻求帮助，casemanager不在线casemanager收到的短信',
+                  'short_title'=>'汇医服务'
                  ],
                 5=>[
                   'content'=>'测试自动回复（中文）',
-                  'description'=>'layim用户咨询，casemanger超过十分钟未回复的时候对用户的自动回复'  
+                  'description'=>'layim用户咨询，casemanger超过十分钟未回复的时候对用户的自动回复',
+                  'short_title'=>'汇医服务'
                  ],
                 6=>[
                   'content'=>'【汇医服务】'.$data['nickname'].'医生，感谢您接受了病案'.$data['case_code'].'。在整个病案服务的过程中，病人可能通过以下三种方式与您沟通咨询：<br/>'
@@ -315,50 +250,59 @@ EOT;
                              .'汇医亚太区',
                              
                   'description'=>'casemanager接受新的case发送的短信',
-                  'title'=>'汇医服务提醒'
+                  'title'=>'汇医服务提醒',
+                  'short_title'=>'汇医服务'
                  ],
                 7=>[
-                   'content'=>$addcasestr_en,
+                   'content'=>$casecontent, 
                    'description'=>'为用户添加成功case发送的邮件内容',
-                    'title'=>'Reminder of medical service'
+                   'title'=>'Reminder of medical service',
+                   'short_title'=>'汇医服务'
                 ]
               
               ]    
            ],
-            2=>[
+             2=>[
               'name'=>'中文繁体',
               'value'=>2, 
               'data'=>[
                 1=>[
                   'content'=>'【汇医服务】'.$data['nickname'].'(先生/女士),您好,您被指定负责新的case，请及时登录 '.$data['url'].' 选择接收或者拒绝',
-                  'description'=>'被指定case发给casemanager的短信内容'  
+                  'description'=>'被指定case发给casemanager的短信内容',
+                  'short_title'=>'汇医服务'
                  ],
                 2=>[
                   'content'=>'',
                   'description'=>'添加用户帐号需要发送的邮件内容',
-                  'title'=>''  
+                  'title'=>'',
+                  'short_title'=>'汇医服务'
                  ],
                3=>[
                   'content'=>'么西',
                   'description'=>'修改用户密码需要发送的邮件内容',
-                  'title'=>'阿萨德' 
+                  'title'=>'阿萨德',
+                   'short_title'=>'汇医服务'
                  ],
                 4=>[
                   'content'=>'',
-                  'description'=>'用户寻求帮助，casemanager不在线casemanager收到的短信'  
+                  'description'=>'用户寻求帮助，casemanager不在线casemanager收到的短信',
+                  'short_title'=>'汇医服务'
                  ],
                 5=>[
                   'content'=>'',
-                  'description'=>'layim用户咨询，casemanger超过十分钟未回复的时候对用户的自动回复'  
+                  'description'=>'layim用户咨询，casemanger超过十分钟未回复的时候对用户的自动回复',
+                  'short_title'=>'汇医服务'
                  ],
                 6=>[
                   'content'=>'',
-                  'description'=>'casemanager接受新的case发送的短信'  
+                  'description'=>'casemanager接受新的case发送的短信',
+                  'short_title'=>'汇医服务'
                  ],
                 7=>[
-                   'content'=>'添加case成功(繁体)', 
+                   'content'=>'添加case成功(繁体)',
                    'description'=>'为用户添加成功case发送的邮件内容',
-                    'title'=>'汇医服务提醒'
+                    'title'=>'汇医服务提醒',
+                   'short_title'=>'汇医服务'
                 ]
               ]    
            ],
@@ -368,7 +312,8 @@ EOT;
               'data'=>[
                 1=>[
                   'content'=>'【Medical service】Dear Mr/Ms '.$data['nickname'].',you are assigned to be responsible for the new case，Please log in  '.$data['url'].' choose to receive or refuse!',
-                  'description'=>'被指定case发给casemanager的短信内容'  
+                  'description'=>'被指定case发给casemanager的短信内容',
+                  'short_title'=>'Advance Medical'
                  ],
                 2=>[
                   'content'=>[
@@ -400,20 +345,24 @@ EOT;
                       
                   ],
                   'description'=>'添加用户帐号需要发送的邮件内容',
-                  'title'=>'Apply for medical service account number and password'  
+                  'title'=>'Apply for medical service account number and password',
+                  'short_title'=>'Advance Medical'
                  ],
                 3=>[
                   'content'=>'',
                   'description'=>'修改用户密码需要发送的邮件内容',
-                  'title'=>''  
+                  'title'=>'',
+                  'short_title'=>'Advance Medical'
                  ],
                 4=>[
                   'content'=>'【Medical service】Dear Dr. '.$data['nickname'].',A patient has sent you a message. Please log in  '.$data['url'].'/service  ，and reply at your earliest convenience.',
-                  'description'=>'用户寻求帮助，casemanager不在线casemanager收到的短信'  
+                  'description'=>'用户寻求帮助，casemanager不在线casemanager收到的短信',
+                  'short_title'=>'Advance Medical'
                  ],
                 5=>[
                   'content'=>'测试自动回复（英文）',
-                  'description'=>'layim用户咨询，casemanger超过十分钟未回复的时候对用户的自动回复'  
+                  'description'=>'layim用户咨询，casemanger超过十分钟未回复的时候对用户的自动回复',
+                  'short_title'=>'Advance Medical'
                  ],
                 6=>[
                   'content'=>'【Medical service】Dr '.$data['nickname'].',thank you for taking case '.$data['case_code'].' . Please be aware that patient may consult you in three ways:<br/>'
@@ -426,12 +375,14 @@ EOT;
                              .'Advance Medical Asia Pacific',
                              
                   'description'=>'casemanager接受新的case发送的短信',
-                  'title'=>'Reminder of medical service'
+                  'title'=>'Reminder of medical service',
+                  'short_title'=>'Advance Medical'
                  ],
                 7=>[
-                   'content'=>$addcasestr_en,
+                   'content'=>$caseecontent,
                    'description'=>'为用户添加成功case发送的邮件内容',
-                    'title'=>'Reminder of medical service'
+                    'title'=>'Reminder of medical service',
+                   'short_title'=>'Advance Medical'
                 ]
               ]    
            ]

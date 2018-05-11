@@ -288,19 +288,25 @@ class CaseModel extends Model
                  if(!isset($field['username'])){
                      $field['username']=$field['firstname'].' '.$field['lastname'];
                  }
-                 if(!empty($companylist)){
-                     
+                 if(!empty($companylist)){ 
                      foreach ($companylist as $key => $value) {
                         $user=[];
                         $user['email']=$value['email'];
-                        $user['language']=$value['language'];
+                        
                         $user['case_code']=$casecount;
-                        //根据公司获取case邮件内容
-                        $company['addcase_content'] || $company['addcase_content']=1;
-                        $emailcontent=db('cases_email_content')->where(['id'=>$company['addcase_content']])->find();
-                        $field['content']=$emailcontent['content'];
-                        $field['econtent']=$emailcontent['econtent'];
+                         //根据公司获取case邮件内容
+                        $value['casecontent'] || $value['casecontent']=1;
+                        $emailcontent=db('cases_email_content')->where(['id'=>$value['casecontent']])->find();
+                        $field['content']= $emailcontent['content'];
+                        //用户所在公司
+                        $field['company']=$company['name'];
                         $field=$this->updatefield($field);
+                        if($company['type']==1){
+                            $userinfo= ChatUserLogic::getInstance()->getUserlist(['id'=>$userid],1);
+                            $user['policy']=$userinfo['policy'];
+                        }else{
+                            $user['policy']='';
+                        }
                         $user['field']=$field;
                         if(isset($user['email'])||!empty($user['email'])){
                         //发送邮件  
