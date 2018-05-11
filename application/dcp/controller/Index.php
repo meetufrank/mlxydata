@@ -107,6 +107,7 @@ class Index extends Controller
        exit;
        $this->siteTitle = 'Home of advance|medical';
 
+       
         return $this->fetch();
     }
     
