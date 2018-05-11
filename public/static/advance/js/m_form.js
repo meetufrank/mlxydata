@@ -1,9 +1,9 @@
 // data
  $("#patient-birth").datetimePicker({
         //  title: '自定义格式',
-        yearSplit: '年',
-        monthSplit: '月',
-        dateSplit: '日',
+        yearSplit: '-',
+        monthSplit: '-',
+        dateSplit: '',
         times: function () {
 
         },
@@ -32,9 +32,9 @@ $("input[name='Smoking']").click(function(){
 
 $("#SmoKing").datetimePicker({
         //  title: '自定义格式',
-        yearSplit: '年',
-        monthSplit: '月',
-        dateSplit: '日',
+        yearSplit: '-',
+        monthSplit: '-',
+        dateSplit: '',
 
         times: function () {
 
@@ -58,9 +58,9 @@ $("input[name='Alcohol']").click(function(){
 
 $("#Alcohol").datetimePicker({
         //  title: '自定义格式',
-        yearSplit: '年',
-        monthSplit: '月',
-        dateSplit: '日',
+        yearSplit: '-',
+        monthSplit: '-',
+        dateSplit: '',
 
         times: function () {
 
@@ -72,9 +72,9 @@ $("#Alcohol").datetimePicker({
 
 $("#pressure").datetimePicker({
         //  title: '自定义格式',
-        yearSplit: '年',
-        monthSplit: '月',
-        dateSplit: '日',
+        yearSplit: '-',
+        monthSplit: '-',
+        dateSplit: '',
 
         times: function () {
 
@@ -86,9 +86,9 @@ $("#pressure").datetimePicker({
 
 $("#HbA1c").datetimePicker({
         //  title: '自定义格式',
-        yearSplit: '年',
-        monthSplit: '月',
-        dateSplit: '日',
+        yearSplit: '-',
+        monthSplit: '-',
+        dateSplit: '',
 
         times: function () {
 

@@ -151,6 +151,7 @@ class Index extends Controller
      * 
      */
     public function addCase(Request $request) {
+        
          if ($request->isPost()) {
             $data = [
                 'username' => str_replace(' ', '',$request->param('firstname')).' '.str_replace(' ', '',$request->param('lastname')),
@@ -176,7 +177,21 @@ class Index extends Controller
                 'country'=>$request->param('country',3),
                 'email'=>str_replace(' ', '',$request->param('email')),
                 'e_province'=>$request->param('e_province'),
+                'Hypertension'=>$request->param('Hypertension'),
+                'highCholestero'=>$request->param('highCholestero'),
+                'heartDisease'=>$request->param('heartDisease'),
+                'kidneyDisease'=>$request->param('kidneyDisease'),
+                'eyeDisease'=>$request->param('eyeDisease'),
+                'footLegProblems'=>$request->param('footLegProblems'),
+                'msIssues'=>$request->param('msIssues'),
+                'mfConcerns'=>$request->param('mfConcerns'),
+                'smokingDate'=>$request->param('smokingDate'),
+                'alcoholDate'=>$request->param('alcoholDate'),
+                'MRBPressure'=>$request->param('MRBPressure'),
+                'HbA1c'=>$request->param('HbA1c'),
+                'isAccept'=>1,
             ];
+           
             if($data['case_type']!=2){
                 $msg['error']=1;
                 $msg['msg']='提交case类型非法'; 
