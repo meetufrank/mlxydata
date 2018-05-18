@@ -1,26 +1,29 @@
 // data
+//  $("#patient-birth").datetimePicker({
+//         //  title: '自定义格式',
+//         yearSplit: '-',
+//         monthSplit: '-',
+//         dateSplit: '',
+//         times: function () {
+//
+//         },
+//         onChange: function (picker, values, displayValues) {
+//             console.log(values);
+//         }
+//
+//
+//     });
 
- $("#patient-birth").datetimePicker({
-        //  title: '自定义格式',
-        yearSplit: '-',
-        monthSplit: '-',
-        dateSplit: '',
-        times: function () {
 
-        },
-        onChange: function (picker, values, displayValues) {
-            console.log(values);
-        }
-
-
-    });
+laydate.render({
+    elem: '#test1-1' ,//指定元素
+    lang: 'en'
+});
 
 
 //data
 
 // NO不能选择
-
-
 $("input[name='Smoking']").click(function(){
     var smoking = $("input:checked[name='Smoking']").val();
    if (smoking == 0 ){
@@ -32,24 +35,9 @@ $("input[name='Smoking']").click(function(){
 
    }
     console.log(smoking);
-
-    
 })
 // NO不能选择
 
-// $("#SmoKing").datetimePicker({
-//         //  title: '自定义格式',
-//         yearSplit: '-',
-//         monthSplit: '-',
-//         dateSplit: '',
-//
-//         times: function () {
-//
-//         },
-//         onChange: function (picker, values, displayValues) {
-//             console.log(values);
-//         }
-// });
 
 $("input[name='Alcohol']").click(function(){
     var Alcohol = $("input:checked[name='Alcohol']").val();
@@ -61,54 +49,6 @@ $("input[name='Alcohol']").click(function(){
    }
     console.log(Alcohol);   
 });
-
-
-$("#Alcohol").datetimePicker({
-        //  title: '自定义格式',
-        yearSplit: '-',
-        monthSplit: '-',
-        dateSplit: '',
-
-        times: function () {
-
-        },
-        onChange: function (picker, values, displayValues) {
-            console.log(values);
-        }
-});
-
-$("#pressure").datetimePicker({
-        //  title: '自定义格式',
-        yearSplit: '-',
-        monthSplit: '-',
-        dateSplit: '',
-        times: function () {
-
-        },
-        onChange: function (picker, values, displayValues) {
-            console.log(values);
-        }
-});
-
-$("#HbA1c").datetimePicker({
-        //  title: '自定义格式',
-        yearSplit: '-',
-        monthSplit: '-',
-        dateSplit: '',
-
-        times: function () {
-
-        },
-        onChange: function (picker, values, displayValues) {
-            console.log(values);
-        }
-});
-
-
-
-
-
-
 
 function formInitial() {
     var e = $(".diagnose");
@@ -403,7 +343,12 @@ $(function() {
                     concerns: {
                         required: !0
                     },
-
+                    Smoking:{
+                        required: !0
+                    },
+                    Alcohol:{
+                        required: !0
+                    },
 
 
 
@@ -441,10 +386,11 @@ $(function() {
                     aux_file: {
                         extension: "jpg|png|bmp|doc|docx|pdf|txt",
                         filesize: 3e3
-                    },
-                    "contract-checkbox": {
-                        required: !0
-                    }
+                    },"contract-checkbox":
+                        {
+                            required: "Please accept the terms of services"
+                        }
+
                 },
                 messages: {
                     username: {

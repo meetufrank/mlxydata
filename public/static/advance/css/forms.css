@@ -197,9 +197,15 @@
     .form-home-header {
         display: none
     }
+    #Onhide_content{
+        height: 790px;
+    }
 }
 
 @media (min-width:768px) {
+    #Onhide_content{
+        height: 790px;
+    }
     .form-home-header {
         display: block;
         height: 75px;
@@ -262,7 +268,11 @@
     }
 }
 
+
 @media (min-width:993px) {
+    #Onhide_content{
+        height: 770px;
+    }
     .form-home-header {
         height: 100px
     }
@@ -284,6 +294,9 @@
 }
 
 @media (min-width:1200px) {
+    #Onhide_content{
+        height: 710px;
+    }
     .form-home-header {
         height: 100px
     }
@@ -305,6 +318,9 @@
 }
 
 @media (min-width:1439px) {
+    #Onhide_content{
+        height: 680px;
+    }
     .form-home-header {
         height: 130px
     }
@@ -1567,7 +1583,7 @@
 }
 
 .form-show-health input[type=radio]+span {
-    background-color: #1ba9f5
+    background-color: #d0d0d0
 }
 
 .form-show-health input[type=radio]:checked+span {
@@ -1638,7 +1654,7 @@
 }
 
 .form-show-health .user-time input[type=checkbox]+span {
-    background-color: #1ba9f5
+    background-color: #d0d0d0
 }
 
 .form-show-health .user-time input[type=checkbox]:checked+span {
