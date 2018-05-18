@@ -37,19 +37,19 @@ $("input[name='Smoking']").click(function(){
 })
 // NO不能选择
 
-$("#SmoKing").datetimePicker({
-        //  title: '自定义格式',
-        yearSplit: '-',
-        monthSplit: '-',
-        dateSplit: '',
-
-        times: function () {
-
-        },
-        onChange: function (picker, values, displayValues) {
-            console.log(values);
-        }
-});
+// $("#SmoKing").datetimePicker({
+//         //  title: '自定义格式',
+//         yearSplit: '-',
+//         monthSplit: '-',
+//         dateSplit: '',
+//
+//         times: function () {
+//
+//         },
+//         onChange: function (picker, values, displayValues) {
+//             console.log(values);
+//         }
+// });
 
 $("input[name='Alcohol']").click(function(){
     var Alcohol = $("input:checked[name='Alcohol']").val();
@@ -229,7 +229,7 @@ $(function() {
             }),
             $(".btn-medical").click(function() {
                 $(".form-inner-wrapper").addClass("form-show"),
-                    $(".change-label").text("I glve permission to Allianz Malaysia to release my medival records to Advance MedicalI have already read and accept the consent terms"),
+                    $(".change-label").text(" Please describe your goals while in the Diabetes Care Programme:"),
                     e(0)
             }),
             $(".btn-expert").click(function() {
