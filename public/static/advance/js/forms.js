@@ -1,18 +1,24 @@
 // data
- $("#patient-birth").datetimePicker({
-        //  title: '自定义格式',
-        yearSplit: '-',
-        monthSplit: '-',
-        dateSplit: '',
-        times: function () {
+//  $("#patient-birth").datetimePicker({
+//         //  title: '自定义格式',
+//         yearSplit: '-',
+//         monthSplit: '-',
+//         dateSplit: '',
+//         times: function () {
+//
+//         },
+//         onChange: function (picker, values, displayValues) {
+//             console.log(values);
+//         }
+//
+//
+//     });
 
-        },
-        onChange: function (picker, values, displayValues) {
-            console.log(values);
-        }
 
-
-    });
+laydate.render({
+    elem: '#test1-1' ,//指定元素
+    lang: 'en'
+});
 
 
 //data
@@ -337,7 +343,12 @@ $(function() {
                     concerns: {
                         required: !0
                     },
-
+                    Smoking:{
+                        required: !0
+                    },
+                    Alcohol:{
+                        required: !0
+                    },
 
 
 
@@ -375,10 +386,11 @@ $(function() {
                     aux_file: {
                         extension: "jpg|png|bmp|doc|docx|pdf|txt",
                         filesize: 3e3
-                    },
-                    "contract-checkbox": {
-                        required: !0
-                    }
+                    },"contract-checkbox":
+                        {
+                            required: "Please accept the terms of services"
+                        }
+
                 },
                 messages: {
                     username: {
