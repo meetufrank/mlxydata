@@ -1,3 +1,9 @@
+.medical-form-header .form-step-indicator span.current{
+    margin-top:-10px !important;
+}
+
+
+
 .medical-form input[type=radio]{
 	cursor:pointer;
 }
@@ -1169,10 +1175,12 @@
     }
 
     .medical-form .user-time .time-wrapper {
-        margin-bottom: 3px
+        margin-bottom: 3px;
+        display: flex;
     }
 
     .medical-form .user-time .time-inner-wrapper {
+        flex: 1;
         display: inline-block;
         width: 50%;
         height: 28px;
