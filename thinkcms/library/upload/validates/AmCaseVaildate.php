@@ -22,10 +22,10 @@ class AmCaseVaildate extends Validate
         if (empty($extensions)) {
             return true;
         }
-     
+    
         // 后缀判断
         if (! in_array($file->getExtension(), $extensions)) {
-            $data['msg']='错误后缀文件!';
+            $data['msg']='Error suffix file!';
             echo json_encode($data);exit;
             //throw new \Exception('不允许上传后缀为[' . $file->getExtension() . ']的文件');
         }
@@ -35,7 +35,7 @@ class AmCaseVaildate extends Validate
         $minSize = $common->translateBytes($this->getOption('min_size'));
         
         if ($minSize && $file->getSize() < $minSize) {
-            $data['msg']='文件小于允许文件上传的最小值[' . $common->formatBytes($minSize) . ']';
+            $data['msg']='The file is smaller than the minimum allowed file upload[' . $common->formatBytes($minSize) . ']';
             echo json_encode($data);exit;
             //throw new \Exception('文件小于允许文件上传的最小值[' . $common->formatBytes($minSize) . ']');
         }
@@ -43,7 +43,7 @@ class AmCaseVaildate extends Validate
         // 最大值判断
         $maxSize = $common->translateBytes($this->getOption('max_size'));
         if ($maxSize && $file->getSize() > $maxSize) {
-            $data['msg']='文件超过允许文件上传的最大值[' . $common->formatBytes($maxSize) . ']';
+            $data['msg']='File exceeds the maximum allowed file upload[' . $common->formatBytes($maxSize) . ']';
             echo json_encode($data);exit;
             //throw new \Exception('文件超过允许文件上传的最大值[' . $common->formatBytes($maxSize) . ']');
         }

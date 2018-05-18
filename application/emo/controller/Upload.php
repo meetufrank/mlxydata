@@ -35,12 +35,12 @@ class Upload extends Controller
         // 文件是否存在
         $file = isset($_FILES['upload_file']) ? $_FILES['upload_file'] : null;
         if (empty($file)) {
-            $this->error('上传文件不存在');
+            $this->error('Upload file does not exist');
         }
         
         $result = $this->uploadFile($file, $option);
         
-        $this->success('上传成功', '', $result);
+        $this->success('Uploaded successfully', '', $result);
     }
 
   

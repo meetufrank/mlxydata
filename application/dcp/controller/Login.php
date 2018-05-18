@@ -64,9 +64,9 @@ class Login extends Controller
                 return json(['code' => -2, 'data' => '', 'msg' => 'Password error']);
             }
              //查询该用户是否有登录该pp的权限
-             if($user['company']!=2&&$user['company']!=8){
-                 return json(['code' => -2, 'data' => '', 'msg' => 'You do not have permission to log in to this site']);
-             }
+//             if($user['company']!=2&&$user['company']!=8){
+//                 return json(['code' => -2, 'data' => '', 'msg' => 'You do not have permission to log in to this site']);
+//             }
             //设置用户登录
             $chatuser->where('id', $user['id'])->setField('status', 1);
 

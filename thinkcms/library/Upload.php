@@ -91,7 +91,7 @@ class Upload implements UploadInterface
      * @see UploadInterface::upload()
      */
     public function upload(FileInterface $file, $path = null, $overwrite = false)
-    {
+    {  
         // 存储
         $storage = $this->getStorage();
         if (is_null($storage)) {
@@ -103,7 +103,7 @@ class Upload implements UploadInterface
         foreach ($this->_processors as $processor) {
             $processor->process($file);
         }
-        
+     
         // 验证
         foreach ($this->_validates as $validate) {
             $validate->validate($file);
