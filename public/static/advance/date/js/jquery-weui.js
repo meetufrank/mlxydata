@@ -4004,8 +4004,8 @@ Device/OS Detection
           scrollToInput: true,
           inputReadOnly: true,
           toolbar: true,
-          toolbarCloseText: '完成',
-          title: '请选择',
+          toolbarCloseText: 'carry out',
+          title: 'please choose',
           toolbarTemplate: '<div class="toolbar">\
           <div class="toolbar-inner">\
           <a href="javascript:;" class="picker-button close-picker">{{closeText}}</a>\

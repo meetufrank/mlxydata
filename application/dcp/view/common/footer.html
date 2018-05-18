@@ -5,6 +5,15 @@
     .medical-form-header .form-step-indicator > div {
         flex: 1 !important;
     }
+    
+    @media screen and (max-width: 860px) {
+        #Onhide_content{
+            height: 790px!important;
+        }
+        .medical-form .medical-label{
+            font-size: 1.2em !important;
+        }
+    }
 
 </style>
 
@@ -273,7 +282,7 @@
                 </div>
                 <!-- 1 -->
                 <div class="form-section  Onhide">
-                    <div style="height:660px;">
+                    <div id="Onhide_content">
                         <div class="form-group">
                             <label for="patient-gender" class="col-xs-4 col-sm-3 control-label medical-label">Hypertension</label>
                             <div class="col-xs-8 col-sm-9">
@@ -430,7 +439,7 @@
                             <label for="birth-date" class="col-xs-4 col-sm-3 control-label medical-label">(Date stopped
                                 M/D/Y)</label>
                             <div class="col-xs-8 col-sm-9" id="patient-birth2">
-                                <input type="time" class="form-control" name="smokingDate" id="SmoKing"
+                                <input type="text" class="form-control" name="smokingDate" id="SmoKing"
                                        data-field="date">
 
                             </div>
@@ -530,7 +539,7 @@
                         <div class="col-sm-12">
                             <input type="checkbox" id="contract-checkbox" name="contract-checkbox" checked="">
                             <label for="contract-checkbox">I have read and accepted the</label><span
-                                class="contract-click">&nbsp;terms and conditions </span><font>&nbsp; and give
+                                class="contract-click">&nbsp;terms and conditions </span><font style="font-size:1.4em">&nbsp; and give
                             permission to Allianz Malaysia to release my medical records to Advance Medical.</font>
                         </div>
                     </div>

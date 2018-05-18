@@ -197,9 +197,15 @@
     .form-home-header {
         display: none
     }
+    #Onhide_content{
+        height: 790px;
+    }
 }
 
 @media (min-width:768px) {
+    #Onhide_content{
+        height: 790px;
+    }
     .form-home-header {
         display: block;
         height: 75px;
@@ -263,6 +269,9 @@
 }
 
 @media (min-width:993px) {
+    #Onhide_content{
+        height: 790px;
+    }
     .form-home-header {
         height: 100px
     }
@@ -305,6 +314,9 @@
 }
 
 @media (min-width:1439px) {
+    #Onhide_content{
+        height: 730px;
+    }
     .form-home-header {
         height: 130px
     }

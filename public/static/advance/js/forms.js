@@ -1,5 +1,4 @@
 // data
-
  $("#patient-birth").datetimePicker({
         //  title: '自定义格式',
         yearSplit: '-',
@@ -19,8 +18,6 @@
 //data
 
 // NO不能选择
-
-
 $("input[name='Smoking']").click(function(){
     var smoking = $("input:checked[name='Smoking']").val();
    if (smoking == 0 ){
@@ -32,24 +29,9 @@ $("input[name='Smoking']").click(function(){
 
    }
     console.log(smoking);
-
-    
 })
 // NO不能选择
 
-// $("#SmoKing").datetimePicker({
-//         //  title: '自定义格式',
-//         yearSplit: '-',
-//         monthSplit: '-',
-//         dateSplit: '',
-//
-//         times: function () {
-//
-//         },
-//         onChange: function (picker, values, displayValues) {
-//             console.log(values);
-//         }
-// });
 
 $("input[name='Alcohol']").click(function(){
     var Alcohol = $("input:checked[name='Alcohol']").val();
@@ -61,54 +43,6 @@ $("input[name='Alcohol']").click(function(){
    }
     console.log(Alcohol);   
 });
-
-
-$("#Alcohol").datetimePicker({
-        //  title: '自定义格式',
-        yearSplit: '-',
-        monthSplit: '-',
-        dateSplit: '',
-
-        times: function () {
-
-        },
-        onChange: function (picker, values, displayValues) {
-            console.log(values);
-        }
-});
-
-$("#pressure").datetimePicker({
-        //  title: '自定义格式',
-        yearSplit: '-',
-        monthSplit: '-',
-        dateSplit: '',
-        times: function () {
-
-        },
-        onChange: function (picker, values, displayValues) {
-            console.log(values);
-        }
-});
-
-$("#HbA1c").datetimePicker({
-        //  title: '自定义格式',
-        yearSplit: '-',
-        monthSplit: '-',
-        dateSplit: '',
-
-        times: function () {
-
-        },
-        onChange: function (picker, values, displayValues) {
-            console.log(values);
-        }
-});
-
-
-
-
-
-
 
 function formInitial() {
     var e = $(".diagnose");
