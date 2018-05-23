@@ -1561,13 +1561,13 @@
 }
 @media (min-width:680px) {
     .form-section.Onhide.current{
-        height: 800px;
+        height: 760px;
     }
 }
 
-@media (min-width:650px) and (max-width:690px ) {
+@media (min-width:750px) and (max-width:690px ) {
     .form-section.Onhide.current{
-        height: 640px;
+        height: 700px;
     }
 }
 
