@@ -197,9 +197,7 @@
     .form-home-header {
         display: none
     }
-    #Onhide_content{
-        height: 790px;
-    }
+
 }
 
 @media (min-width:768px) {
@@ -295,7 +293,7 @@
 
 @media (min-width:1200px) {
     #Onhide_content{
-        height: 750px;
+        height: 710px;
     }
     .form-home-header {
         height: 100px
@@ -316,6 +314,7 @@
         font-size: 2.4em
     }
 }
+
 
 @media (min-width:1439px) {
     #Onhide_content{
@@ -835,7 +834,7 @@
         display: block
     }
     .form-section.Onhide.current{
-        height:830px;
+        height:790px;
     }
     .medical-form .form-file {
         margin-top: 15px;
@@ -1230,7 +1229,11 @@
         background-color: #017f4f
     }
 }
-
+/*@media (max-width: 1200px) {*/
+    /*#Onhide_content{*/
+        /*height: 750px!important;*/
+    /*}*/
+/*}*/
 @media (min-width:993px) {
     .medical-form .form-group {
         margin-bottom: 6px
@@ -1541,6 +1544,65 @@
         top: 0
     }
 }
+
+/*dcp  表单新增 --  高度*/
+
+
+
+@media (min-width:780px) {
+    .form-section.Onhide.current{
+        height: 850px;
+    }
+}
+@media (min-width:700px) {
+    .form-section.Onhide.current{
+        height: 740px;
+    }
+}
+@media (min-width:680px) {
+    .form-section.Onhide.current{
+        height: 800px;
+    }
+}
+
+@media (min-width:650px) and (max-width:690px ) {
+    .form-section.Onhide.current{
+        height: 640px;
+    }
+}
+
+@media (min-width:900px) {
+    .form-section.Onhide.current{
+        height: 840px !important;
+    }
+}
+@media (min-width:1100px) {
+    .form-section.Onhide.current{
+        height: 770px !important;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .form-section.Onhide.current{
+        height: 740px !important;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .form-section.Onhide.current{
+        height: 680px !important;
+    }
+}
+/*dcp  表单新增 --  高度*/
+
+
+
+
+
+
+
+
+
+
+
 
 .form-show-health .file-name,
 .form-show-health .form-another-text,
