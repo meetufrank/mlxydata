@@ -97,6 +97,7 @@ abstract class File implements FileInterface
      */
     public function getPath()
     {
+       
         return $this->filePath;
     }
 

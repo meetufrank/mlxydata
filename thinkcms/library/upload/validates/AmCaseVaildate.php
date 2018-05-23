@@ -22,7 +22,6 @@ class AmCaseVaildate extends Validate
         if (empty($extensions)) {
             return true;
         }
-    
         // 后缀判断
         if (! in_array($file->getExtension(), $extensions)) {
             $data['msg']='Error suffix file!';

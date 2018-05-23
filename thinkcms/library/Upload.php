@@ -103,11 +103,12 @@ class Upload implements UploadInterface
         foreach ($this->_processors as $processor) {
             $processor->process($file);
         }
-     
+   
         // 验证
         foreach ($this->_validates as $validate) {
             $validate->validate($file);
         }
+        
         
         // 文件信息
         $info = [

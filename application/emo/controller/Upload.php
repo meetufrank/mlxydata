@@ -64,7 +64,7 @@ class Upload extends Controller
         $upload = App::getSingleton()->upload;
         
         // 文件后缀
-        $extensions = ['zip','pdf','doc','jpeg','jpg','png'];
+        $extensions = ['docx','zip','pdf','doc','jpeg','jpg','png'];
         $maxsize='10M';
         if (! empty($extensions)) {
             $option = [
