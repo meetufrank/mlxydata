@@ -29,12 +29,13 @@ class SendUser
         }
         
          eval('$YouxiangContent='.$data['field']['content'].';');
-         
+
 	//$YouxiangContent=ChatUserLogic::getInstance()->getLanguage($user,7); //获取邮件内容
 		$email_data['to']=$to;
                 $email_data['title']=$YouxiangContent['title'];
                 $email_data['content']=$YouxiangContent['content'];
                 $email_data['sendperson']=$YouxiangContent['short_title'];
+              
                 //加入任务队列中
           Queue::push('app\common\jobs\QueueClient@sendMAIL', $email_data, $queue ='jobs');
                 
