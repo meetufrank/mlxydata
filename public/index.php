@@ -1,5 +1,10 @@
 <?php
-
+//判断当前链接
+//$url='http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"];
+//if($url=='http://'.$_SERVER['SERVER_NAME'].'/'){
+//    header("Location:http://www.advance-medical.net");
+//    exit;
+//}
 // WEB目录
 define('WEB_PATH', __DIR__ . DIRECTORY_SEPARATOR);
 

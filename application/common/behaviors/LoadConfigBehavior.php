@@ -21,7 +21,8 @@ class LoadConfigBehavior
         try {
             Config::set(ConfigLogic::getSingleton()->getConfig());
         } catch (\Exception $e) {
-            Request::instance()->module() == 'install' || Response::getSingleton()->redirect('/install.html');
+           // echo $e->getMessage();
+//            Request::instance()->module() == 'install' || Response::getSingleton()->redirect('/install.html');
         }
     }
 }

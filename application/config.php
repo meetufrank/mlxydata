@@ -25,5 +25,9 @@ return [
                     'type' => '',
                     'auto_start' => true,
                     ],
+   'log'   =>[
+		//	可以临时关闭日志写入
+		'type'	=>'test'
+       ],
 
 ];

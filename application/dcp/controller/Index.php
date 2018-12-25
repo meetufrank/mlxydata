@@ -94,8 +94,9 @@ class Index extends Controller
     public function savebackurl() {
         $request = Request::instance();
         $url=$request->url(true);
-        
-        cookie('amback', $url);
+        if(strtolower($request->action())!='addcase'){
+          cookie('amback', $url);  
+        }
     }
     /**
      * 首页
@@ -153,6 +154,7 @@ class Index extends Controller
     public function addCase(Request $request) {
         
          if ($request->isPost()) {
+             
             $data = [
                 'username' => str_replace(' ', '',$request->param('firstname')).' '.str_replace(' ', '',$request->param('lastname')),
                 'birthday' => $request->param('birthday'),
@@ -191,7 +193,7 @@ class Index extends Controller
                 'HbA1c'=>$request->param('HbA1c'),
                 'isAccept'=>1,
             ];
-           
+            
             if($data['case_type']!=2){
                 $msg['error']=1;
                 $msg['msg']='提交case类型非法'; 

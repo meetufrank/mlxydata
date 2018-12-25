@@ -327,10 +327,10 @@ $(function () {
             if (e.preventDefault(), $(".medical-form").valid()) {
                 $(".medical-form").find("input[type=submit]").prop("disabled", !0),
                     $(".medical-form").find("input[type=submit]").val("submitting...");
-                for (var t = $(".medical-form").serializeArray(), a = [], i = t.length - 1; i >= 0; i--) "user_time" == t[i].name && (a.push(t[i].value), t.splice(i, 1));
+                for (var t = $(".medical-form").serializeArray(), a = [], i = t.length - 1; i >= 0; i--) "preferred_time" == t[i].name && (a.push(t[i].value), t.splice(i, 1));
                 console.log(a),
                     t.push({
-                        name: "user_time",
+                        name: "preferred_time",
                         value: a.join(",")
                     });
                 var layerload = layer.open({

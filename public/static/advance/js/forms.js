@@ -475,12 +475,13 @@ $(function() {
             if (e.preventDefault(), !$(".contract-context").hasClass("show") && $(".medical-form").valid()) {
                 $(".medical-form").find("input[type=submit]").prop("disabled", !0),
                     $(".medical-form").find("input[type=submit]").val("submitting...");
-                for (var t = $(".medical-form").serializeArray(), r = [], a = t.length - 1; a >= 0; a--) "user_time" == t[a].name && (r.push(t[a].value), t.splice(a, 1));
-                console.log(r),
+                for (var t = $(".medical-form").serializeArray(), r = [], a = t.length - 1; a >= 0; a--) "preferred_time" == t[a].name && (r.push(t[a].value), t.splice(a, 1));
+                
                     t.push({
-                        name: "user_time",
+                        name: "preferred_time",
                         value: r.join(",")
                     });
+//                    console.log($.param(t));return;
                 var layerload = layer.open({
                     type: 2,
                     content: 'loading'

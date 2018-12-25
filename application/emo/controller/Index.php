@@ -94,8 +94,10 @@ class Index extends Controller
     public function savebackurl() {
         $request = Request::instance();
         $url=$request->url(true);
+        if(strtolower($request->action())!='addcase'){
+          cookie('amback', $url);  
+        }
         
-        cookie('amback', $url);
     }
     /**
      * 首页
