@@ -11,6 +11,20 @@ $("#patient-birth").datetimePicker({
         console.log(values);
     }
 });
+// data    新增项 选年份  ！！！！！！
+$("#patient-birth1").datetimePicker({
+    //  title: '自定义格式',
+    yearSplit: '-',
+    monthSplit: '-',
+    dateSplit: '',
+    times: function () {
+
+    },
+    onChange: function (picker, values, displayValues) {
+        console.log(values);
+    }
+});
+
 //data
 
 // NO不能选择

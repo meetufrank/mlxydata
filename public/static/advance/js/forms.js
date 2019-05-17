@@ -19,6 +19,10 @@ laydate.render({
     elem: '#test1-1' ,//指定元素
     lang: 'en'
 });
+laydate.render({
+    elem: '#test1-2' ,//指定元素
+    lang: 'en'
+});
 
 
 //data

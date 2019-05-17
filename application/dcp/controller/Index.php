@@ -152,9 +152,209 @@ class Index extends Controller
      * 
      */
     public function addCase(Request $request) {
-        
+//        $aa=[
+//                   'content'=>'<div>  A new patient, '.$data['field']['username'].' has enrolled in the ALLIANZ MALAYSIA/ADVANCE MEDICAL '.$data['field']['typeename'].' through the online portal. Case details are as follows:</div> 
+//                
+//    	
+//    	<table style="border:1px solid #ddd;">
+//    	
+//    	<thead  style="border:1px solid #ddd;">
+//    		<tr>
+//    			<th colspan="2">Case Information</th>
+//    		</tr>
+//    	</thead>
+//    	<tbody style="margin-top:10px;">
+//    		<tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Case Type</td>
+//    			<td class="TableRight" >'.$data['field']['typeename'].'</td>
+//    		</tr>
+//		<tr>
+//    			<td class="TableLeft" >Policy Number</td>
+//    			<td class="TableRight" >'.$data['policy'].'</td>
+//    		</tr>		
+//    		<tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Patient Name</td>
+//    			<td class="TableRight" >'.$data['field']['username'].'</td>
+//    		</tr>
+//    		<tr>
+//    			<td class="TableLeft" >Date of Birth</td>
+//    			<td class="TableRight" >'.$data['field']['birthday'].'</td>
+//    		</tr>
+//		<tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Gender</td>
+//    			<td class="TableRight" >'.$data['field']['sexename'].'</td>
+//    		</tr>
+//	        <tr>
+//    			<td class="TableLeft" >If you are the patient</td>
+//    			<td class="TableRight" >'.$data['field']['ismeename'].'</td>
+//    		</tr>
+//		<tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Relationship with the patient</td>
+//    			<td class="TableRight" >'.$data['field']['relationship'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Name of applicant</td>
+//    			<td class="TableRight" >'.$data['field']['applicant_name'].'</td>
+//    		</tr>
+//		<tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Country</td>
+//    			<td class="TableRight" >'.$data['field']['countryename'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Address</td>
+//    			<td class="TableRight" >'.$address.'</td>
+//    		</tr>
+//		<tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Zip code</td>
+//    			<td class="TableRight" >'.$data['field']['zip_code'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Preferred Telephone Number</td>
+//    			<td class="TableRight" >'.$data['field']['preferred_phone'].'</td>
+//    		</tr>
+//		<tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Alternative Telephone Number</td>
+//    			<td class="TableRight" >'.$data['field']['standby_phone'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Email</td>
+//    			<td class="TableRight" >'.$data['field']['email'].'</td>
+//    		</tr>
+//		<tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Convenient Time to be Contacted</td>
+//    			<td class="TableRight" >'.$data['field']['preferred_time'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Description</td>
+//    			<td class="TableRight" >'.$data['field']['illness'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Doctor name</td>
+//    			<td class="TableRight" >'.$data['field']['treatment_doctor'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Hospital</td>
+//    			<td class="TableRight" >'.$data['field']['treatment_hospital'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Specialist</td>
+//    			<td class="TableRight" >'.$data['field']['specialty'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Year of diagnosis</td>
+//    			<td class="TableRight" >'.$data['field']['diagnosisDate'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Current Weight</td>
+//    			<td class="TableRight" >'.$data['field']['weight'].'</td>
+//    		</tr>
+//                 <tr>
+//    			<td class="TableLeft" >Height</td>
+//    			<td class="TableRight" >'.$data['field']['height'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Medications for glucose(oral,insulin)</td>
+//    			<td class="TableRight" >'.$data['field']['Me_glucose'].'</td>
+//    		</tr>
+//              
+//                 <tr>
+//    			<td class="TableLeft" >Medications for blood pressure</td>
+//    			<td class="TableRight" >'.$data['field']['Me_bloodPressure'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Medications for cholesterol(e.g.statins)</td>
+//    			<td class="TableRight" >'.$data['field']['Me_cholesterol'].'</td>
+//    		</tr>
+//                 <tr>
+//    			<td class="TableLeft" >Medications for kidney protection(e.g.ACI)</td>
+//    			<td class="TableRight" >'.$data['field']['Me_kidneyProtection'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Medications for arterial protection(e.g.ASA)</td>
+//    			<td class="TableRight" >'.$data['field']['Me_arterialProtection'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Hypertension</td>
+//    			<td class="TableRight" >'.$data['field']['Hypertensionename'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >High cholestero</td>
+//    			<td class="TableRight" >'.$data['field']['highCholesteroename'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Heart disease</td>
+//    			<td class="TableRight" >'.$data['field']['heartDiseaseename'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Kidney disease</td>
+//    			<td class="TableRight" >'.$data['field']['kidneyDiseaseename'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Eye disease</td>
+//    			<td class="TableRight" >'.$data['field']['eyeDiseaseename'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Foot or leg problems</td>
+//    			<td class="TableRight" >'.$data['field']['footLegProblemsename'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Mental stress issues</td>
+//    			<td class="TableRight" >'.$data['field']['msIssuesename'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Male or female concerns</td>
+//    			<td class="TableRight" >'.$data['field']['mfConcernsename'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Smoking stop date</td>
+//    			<td class="TableRight" >'.$data['field']['smokingDate'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Alcohol stop date</td>
+//    			<td class="TableRight" >'.$data['field']['alcoholDate'].'</td>
+//    		</tr>
+//                <tr>
+//    			<td class="TableLeft" >Most recent blood pressure</td>
+//    			<td class="TableRight" >'.$data['field']['MRBPressure'].'</td>
+//    		</tr>
+//                <tr style="background:#efd3d2;">
+//    			<td class="TableLeft" >Most recent HbA1c</td>
+//    			<td class="TableRight" >'.$data['field']['HbA1c'].'</td>
+//    		</tr>
+//                 
+//               
+//                
+//    	</tbody>
+//    </table>',
+//                   'description'=>'为用户添加成功case发送的邮件内容',
+//                   'title'=>'Reminder of medical service',
+//                   'short_title'=>'Advance Medical'
+//                ];
          if ($request->isPost()) {
              
+             
+             //组合体重
+             
+             $weight_kg='';
+             $weight_lb='';
+             empty($request->param('weight_kg')) || $weight_kg=$request->param('weight_kg').'kg';
+             empty($request->param('weight_lb')) || $weight_lb=$request->param('weight_lb').'lb';
+             if($weight_kg&&$weight_lb){
+                 $weight=$weight_kg.'/'.$weight_lb;
+             }else{
+                 $weight=$weight_kg.$weight_lb;
+             }
+             //组合身高
+             
+             $height_cm='';
+             $height_feet='';
+             empty($request->param('height_cm')) || $height_cm=$request->param('height_cm').'cm';
+             empty($request->param('height_feet')) || $height_feet=$request->param('height_feet').'feet';
+             if($height_cm&&$height_feet){
+                 $height=$height_cm.'/'.$height_feet;
+             }else{
+                 $height=$height_cm.$height_feet;
+             }
             $data = [
                 'username' => str_replace(' ', '',$request->param('firstname')).' '.str_replace(' ', '',$request->param('lastname')),
                 'birthday' => $request->param('birthday'),
@@ -187,10 +387,18 @@ class Index extends Controller
                 'footLegProblems'=>$request->param('footLegProblems'),
                 'msIssues'=>$request->param('msIssues'),
                 'mfConcerns'=>$request->param('mfConcerns'),
-                'smokingDate'=>$request->param('smokingDate'),
-                'alcoholDate'=>$request->param('alcoholDate'),
+                'smokingDate'=>$request->param('smokingDate')?$request->param('smokingDate'):null,
+                'alcoholDate'=>$request->param('alcoholDate')?$request->param('alcoholDate'):null,
                 'MRBPressure'=>$request->param('MRBPressure'),
                 'HbA1c'=>$request->param('HbA1c'),
+                'diagnosisDate'=>$request->param('diagnosisDate')?$request->param('diagnosisDate'):null,
+                'weight'=>$weight,
+                'height'=>$height,
+                'Me_glucose'=>$request->param('Me_glucose'),
+                'Me_bloodPressure'=>$request->param('Me_bloodPressure'),
+                'Me_cholesterol'=>$request->param('Me_cholesterol'),
+                'Me_kidneyProtection'=>$request->param('Me_kidneyProtection'),
+                'Me_arterialProtection'=>$request->param('Me_arterialProtection'),
                 'isAccept'=>1,
             ];
             
@@ -215,6 +423,10 @@ class Index extends Controller
                     $data['options']=$file['id'];
                 }
             }
+            //动态注入身高体重
+            Request::instance()->bind('weight',$data['weight']);
+            Request::instance()->bind('height',$data['height']);
+;
             if(cookie('phone_user_id')){
                 $data['userid']= cookie('phone_user_id');
                 // 动态绑定属性

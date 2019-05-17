@@ -22,7 +22,7 @@
     <style>
         
         .m-form-step-indicator div{
-        width:25%! important;
+        width:20%! important;
     }
     .weui-picker-modal .picker-item{
         padding:0 30px;
@@ -30,6 +30,11 @@
     .toolbar .title{
         line-height: 0;
     }
+        /*!*体重部分 两个输入框部分*!*/
+        /*.weight input{*/
+            /*width: 42%;*/
+            /*display: inline;*/
+        /*}*/
     </style>
 </head>
 
@@ -48,6 +53,7 @@
             <div class="m-form-step-indicator clearfix">
                 <div><span>Patient</span></div>
                 <div><span>Contact</span></div>
+                <div><span>History</span></div>
                 <div><span>Medical</span></div>
               <div><span>Consent</span></div>
             </div>
@@ -230,6 +236,81 @@
                         </div>
                     </div>
                 </div>
+
+                <!--新增加得表单-->
+                <div class="form-section">
+                    <!--Year of diagnosis-->
+                    <div class="form-group data-select">
+                        <label for="birth-date" class="col-xs-5 col-sm-4 control-label medical-label">Year of diagnosis:</label>
+                        <div class="col-xs-7 col-sm-8">
+                            <input type="text" class="form-control" id="patient-birth1" name="diagnosisDate" data-field="date" readonly=""><!-- 日期插件 -->
+                        </div>
+                    </div>
+
+                    <!--<div class="form-group date-select">-->
+                        <!--<label for="birth-date" class="col-xs-4 col-sm-3 control-label medical-label">Date of birth</label>-->
+                        <!--<div class="col-xs-8 col-sm-9">-->
+                            <!--<input type="text" class="form-control" id="patient-birth" name="birthday" data-field="date" readonly="">-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--Current Weight-->
+                    <div class="form-group">
+                        <label for="applicant-name" class="col-xs-5 col-sm-4 control-label medical-label">Current Weight:</label>
+                        <div class="col-xs-7 col-sm-8 weight">
+                            <input  onkeyup="this.value=this.value.replace(/\D/g,'')" name="weight_kg" onafterpaste="this.value=this.value.replace(/\D/g,'')" type="text" class="form-control"><label>&nbsp;&nbsp;kg/&nbsp;&nbsp;</label>
+                            <input  onkeyup="this.value=this.value.replace(/\D/g,'')" name="weight_lb" onafterpaste="this.value=this.value.replace(/\D/g,'')" type="text" class="form-control"><label>&nbsp;&nbsp;Ib</label>
+                        </div>
+                    </div>
+                    <!--Height-->
+                    <div class="form-group">
+                        <label for="applicant-name" class="col-xs-5 col-sm-4 control-label medical-label">Height:</label>
+                        <div class="col-xs-7 col-sm-8 weight">
+                            <input  onkeyup="this.value=this.value.replace(/\D/g,'')" name="height_cm" onafterpaste="this.value=this.value.replace(/\D/g,'')" type="text" class="form-control"><label>&nbsp;&nbsp;cm/&nbsp;&nbsp;</label>
+                            <input  onkeyup="this.value=this.value.replace(/\D/g,'')" name="height_feet" onafterpaste="this.value=this.value.replace(/\D/g,'')" type="text" class="form-control"><label>&nbsp;feet</label>
+                        </div>
+                    </div>
+                    <!--Medications for glucose(oral,insulin)-->
+                    <div class="form-group">
+                        <label for="applicant-name" class="col-xs-5 col-sm-4 control-label medical-label">Medications for glucose(oral,insulin):</label>
+                        <div class="col-xs-7 col-sm-8">
+                            <input type="text" class="form-control" name="Me_glucose">
+                        </div>
+                    </div>
+                    <!--Medications for blood pressure-->
+                    <div class="form-group">
+                        <label for="applicant-name" class="col-xs-5 col-sm-4 control-label medical-label">Medications for blood pressure:</label>
+                        <div class="col-xs-7 col-sm-8">
+                            <input type="text" class="form-control" name="Me_bloodPressure">
+                        </div>
+                    </div>
+                    <!--Medications for cholesterol(e.g.statins)-->
+                    <div class="form-group">
+                        <label for="applicant-name" class="col-xs-5 col-sm-4 control-label medical-label">Medications for cholesterol(e.g.statins):</label>
+                        <div class="col-xs-7 col-sm-8">
+                            <input type="text" class="form-control" name="Me_cholesterol">
+                        </div>
+                    </div>
+                    <!--Medications for kidney protection(e.g.ACI)-->
+                    <div class="form-group">
+                        <label for="applicant-name" class="col-xs-5 col-sm-4 control-label medical-label">Medications for kidney protection(e.g.ACI):</label>
+                        <div class="col-xs-7 col-sm-8">
+                            <input type="text" class="form-control" name="Me_kidneyProtection">
+                        </div>
+                    </div>
+                    <!--Medications for arterial protection(e.g.ASA)-->
+                    <div class="form-group">
+                        <label for="applicant-name" class="col-xs-5 col-sm-4 control-label medical-label">Medications for arterial protection(e.g.ASA):</label>
+                        <div class="col-xs-7 col-sm-8">
+                            <input type="text" class="form-control" name="Me_arterialProtection">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
                 <!-- 1 -->
                  <div class="form-section  Onhide">
                     <div style="height:690px;">
