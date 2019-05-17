@@ -51,12 +51,14 @@ class CaseModel extends Model
         $district=AreaModel::getInstance()->alias_name[2]; //区
         $user=ChatUserModel::getInstance()->alias_name; //用户
         $status=CaseStatusModel::getInstance()->alias_name; //状态
+        $service_lang= CaseServiceLangModel::getInstance()->alias_name;
         $ks= KsModel::getInstance()->alias_name;//科室
         $case_list = $this->withCates()->field(
                 $alias.'.*,'
                 .$aliastype.'.typename,'
                 .$counry.'.name as country_name,'.$province.'.area_name as province_name ,'.$city.'.area_name as city_name ,'.$district.'.area_name as district_name ,'
                 .$user.'.user_name as case_username , '.$user.'.avatar as user_avatar , '
+                .$service_lang.'.sl_name as service_lang_name,'.$service_lang.'.sl_ename as service_lang_ename,'
                 .$status.'.color as statuscolor ,'.$status.'.name as statusname , '
                 .$ks.'.ks_name ,'.$ks.'.ks_ename '
                 )->where($map)
@@ -96,6 +98,7 @@ class CaseModel extends Model
         $query=$this->joinCountry($query);//加入国家
         $query= $this->joinStatus($query); //加入状态
         $query= $this->joinKs($query);  //加入科室
+        $query= $this->joinServiceLang($query); //加入服务语言
         return $this->joinAddress($query);
     }
     
@@ -120,6 +123,17 @@ class CaseModel extends Model
         $user= UserModel::getInstance();
         return $query->join(JtModel::getInstance()->getTableShortName() .' '.$jt->alias_name,$this->alias_name.'.id ='.$jt->alias_name.'.cases_id')
             ->join(JtModel::getInstance()->getTableShortName().' '.$jt->alias_name,$user->alias_name. '.id ='.$jt->alias_name.'.user_id');
+    }
+    
+       /**
+     * 连接服务语言
+     *
+     * @return \think\db\Query
+     */
+    public function joinServiceLang($query)
+    {
+        $casestatus= CaseServiceLangModel::getInstance();
+        return $query->join($casestatus->getTableShortName() . ' '.$casestatus->alias_name, $this->alias_name.'.service_lang = '.$casestatus->alias_name.'.sl_id');
     }
    /**
      * 连接状态
@@ -359,6 +373,16 @@ class CaseModel extends Model
          $field['countryname']=$country['name'];
          $field['countryename']=$country['ename'];
        
+         if(isset($field['service_lang'])){  //服务语言
+             //服务语言
+             $country= db('cases_service_lang')->where(['sl_id'=>$field['service_lang']])->find();
+             $field['service_lang_name']=$country['sl_name'];
+             $field['service_lang_ename']=$country['sl_ename'];
+             
+         }else{
+             $field['service_lang_name']='portal未提供选择方式';
+             $field['service_lang_ename']='Portal does not provide a selection method';
+         }
          if($field['country']==1){
              //省
              $province= db('cases_area')->where(['id'=>$field['province']])->find();
@@ -371,7 +395,55 @@ class CaseModel extends Model
              $field['districtname']=$district['area_name'];
              
          }
-         
+         $isno_arr=[
+            'Hypertension',   //高血压
+            'highCholestero', //高胆固醇
+            'heartDisease',   //心脏病
+            'kidneyDisease',//肾脏疾病
+            'eyeDisease',//眼病
+            'footLegProblems',//脚或腿问题
+            'msIssues',//精神压力问题
+            'mfConcerns',//男性或女性的担忧
+         ];
+         foreach ($isno_arr as $key => $value) {
+             if(!isset($field[$value])){
+                 $field[$value.'name']='否';
+                 $field[$value.'ename']='No';
+             }else{
+                 if($field[$value]==1){
+                 $field[$value.'name']='是';
+                 $field[$value.'ename']='Yes';
+                 }else{
+                     $field[$value.'name']='否';
+                     $field[$value.'ename']='No';
+                } 
+             }
+            
+         }
+         //初始化字段
+         if(!isset($field['weight'])){  //体重
+             if(isset(Request::instance()->weight)){
+               $field['weight']= Request::instance()->weight;  
+             }else{
+               $field['weight']= '';
+             }
+             
+         }
+         if(!isset($field['height'])){   //身高
+             if(isset(Request::instance()->weight)){
+               $field['height']= Request::instance()->height;  
+             }else{
+               $field['height']= '';
+             }
+             
+         }
+         if(!isset($field['smokingDate'])){   //停止吸烟日期
+             $field['smokingDate']= '';
+         }
+         if(!isset($field['alcoholDate'])){   //戒酒日期
+             $field['alcoholDate']='';
+         }
+       
         return $field;
          
     }

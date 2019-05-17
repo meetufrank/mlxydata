@@ -6,7 +6,7 @@ use core\cases\model\CaseTypeModel;
 use core\cases\model\CaseStatusModel;
 use core\cases\model\CountryModel;
 use core\cases\model\KsModel;
-
+use core\cases\model\CaseServiceLangModel;
 class CaseTypeLogic extends Logic
 {
 
@@ -127,6 +127,34 @@ class CaseTypeLogic extends Logic
                 'value' => 0
             ]
         ];
+           
+    }
+       
+              /*
+  * 获取服务语言列表
+  */
+    
+        public function getSelectServiceLang($where=[],$sort='sl_sort asc',$type=1)
+    {
+           $data=CaseServiceLangModel::getInstance()->where($where)->order($sort)->select();
+           $list=[
+
+           ];
+           if($type==1){
+               $field='sl_name';
+           }else{
+                $field='sl_ename';
+           }
+           foreach ($data as $key => $value) {
+               $list[]=[
+                 'name'=>$value[$field],
+                 'value'=>$value['sl_id']
+               ];
+           }
+           
+           
+           return $list;
+       
            
     }
 }

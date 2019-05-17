@@ -3,6 +3,7 @@ namespace app\common\sendemail;
 use email\Cs;
 use core\cases\logic\ChatUserLogic;
 use think\Queue;
+error_reporting(E_ERROR | E_PARSE );
 class SendUser
 {
     

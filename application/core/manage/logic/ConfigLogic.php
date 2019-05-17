@@ -99,7 +99,7 @@ class ConfigLogic extends Logic
             $config = $this->parseConfigVariable($config);
             
             // 缓存
-            Cache::set(self::CACHE_KEY, $config, 600);
+            Cache::set(self::CACHE_KEY, $config, 0);
         }
         return $config;
     }

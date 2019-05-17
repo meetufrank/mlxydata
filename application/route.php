@@ -32,7 +32,7 @@ return [
     'Allianz/EMO/mobile_form/:id'=>'emo/Index/mobile_form',
      'Allianz/EMO'=>'emo/Index/service_details',
 
-        'Allianz'=>'emo/Index/service_details',
+//        'Allianz'=>'emo/Index/service_details',
 //    'services/:id'=>'advance/Index/service_details',
 //    'mobile_form/:id'=>'advance/Index/mobile_form',
 
