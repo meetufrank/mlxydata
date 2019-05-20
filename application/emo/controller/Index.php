@@ -178,6 +178,7 @@ class Index extends Controller
                 'district' => $request->param('district',110101),
                 'zip_code' => $request->param('zip_code'),
                 'preferred_phone' => $request->param('preferred_phone'),
+                'service_lang' => $request->param('service_lang'),
                 'standby_phone' => $request->param('standby_phone'),
                 'preferred_time' => $request->param('preferred_time'),
                 'illness' => $request->param('illness'),

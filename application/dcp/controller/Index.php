@@ -380,6 +380,7 @@ class Index extends Controller
                 'zip_code' => $request->param('zip_code'),
                 'preferred_phone' => $request->param('preferred_phone'),
                 'standby_phone' => $request->param('standby_phone'),
+                'service_lang' => $request->param('service_lang'),
                 'preferred_time' => $request->param('preferred_time'),
                 'illness' => $request->param('illness'),
                 'treatment_doctor' => $request->param('treatment_doctor'),
