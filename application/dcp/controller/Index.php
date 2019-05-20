@@ -52,6 +52,9 @@ class Index extends Controller
             //获取国家列表
             $this->getCountryList();
             
+            //获取语言服务列表
+            $this->getCaseServiceList();
+            
             //获取当前用户信息
             $userid=cookie('phone_user_id')? cookie('phone_user_id'):0;
             $this->assign('userid', $userid);
@@ -79,6 +82,14 @@ class Index extends Controller
          $logic =CaseTypeLogic::getInstance();
          $country_list=$logic->getSelectCountry("locate('Malaysia',ename) desc");
          $this->assign('country_list',$country_list);
+     }
+     
+     //获取语言服务列表
+    protected function getCaseServiceList(){
+         
+         $logic =CaseTypeLogic::getInstance();
+         $case_service_list=$logic->getSelectServiceLang(['sl_status'=>1],'',2);
+         $this->assign('case_service_list',$case_service_list);
      }
          //省市区联动
      protected function assignProvinceList(){

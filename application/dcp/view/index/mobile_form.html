@@ -195,6 +195,19 @@
                             <input type="text" class="form-control" id="user-second-phone" name="standby_phone">
                         </div>
                     </div>
+                    <!--更改为偏好语言服务 输入框改为下拉框格式-->
+                    <div class="form-group">
+                      <label for="service-lang" class="col-xs-5 col-sm-4 control-label medical-label"><span class="has-width">Service Language</span></label>
+                      <div class="col-xs-7 col-sm-8">
+
+                        <select id="service-lang" name="service_lang" >
+                            {volist name="case_service_list" id="sl"}
+                          <option  value="{$sl['value']}" {if condition="$sl['value'] eq 2"}selected{/if} >{$sl['name']}</option>
+                           {/volist}
+
+                        </select>
+                      </div>
+                    </div>
                     <div class="form-group">
                         <label for="user-email" class="col-xs-5 col-sm-4 control-label medical-label"><span class="has-width">Email</span></label>
                         <div class="col-xs-7 col-sm-8">
