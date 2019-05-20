@@ -4032,3 +4032,20 @@
 .expert-example-wrapper .expert-info, .expert-example-wrapper .expert-info>span{
 	font-family: sans-serif;
 }
+/*新增一行字的样式*/
+@media (min-width:1200px){
+    .new_text{
+        padding: 0px 20px;
+        line-height: 25px;
+        font-size: 1.6em;
+        color: #0185c5;
+    }
+}
+@media (max-width: 767px){
+    .new_text{
+        padding: 0px 30px;
+        line-height: 25px;
+        font-size: 1.6em;
+        color: #0185c5;
+    }
+}
